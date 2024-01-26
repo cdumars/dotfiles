@@ -3,7 +3,8 @@
     nixosModules = {
       common = {
         imports = [
-          ./common
+          ./os/common
+          ./specialisations.nix
         ];
       };
 
@@ -12,8 +13,12 @@
       };
 
       linux = {
-        
+        imports = [
+          ./os/nixos
+        ];
       };
+
+      theme = import ../modules/theme;
     };
   };
 }

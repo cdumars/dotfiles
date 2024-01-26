@@ -6,6 +6,7 @@
 
     tree
     jq
+    htop
   ];
 
   programs.fish.enable = true;

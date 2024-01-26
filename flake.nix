@@ -9,6 +9,11 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixos-flake.url = "github:srid/nixos-flake";
+
+    anyrun.url = "github:Kirottu/anyrun";
+    anyrun.inputs.nixpkgs.follows = "nixpkgs";
+
+    hyprpaper.url = "github:hyprwm/hyprpaper";
  };
 
   outputs = inputs@{ self, ... }:
@@ -30,18 +35,31 @@
             cdt = self.nixos-flake.lib.mkLinuxSystem {
               nixpkgs.hostPlatform = "x86_64-linux";
               imports = [
-                self.nixosModules.common # See below for "nixosModules"!
+                self.nixosModules.common
                 self.nixosModules.linux
-                # Your machine's configuration.nix goes here
+                self.nixosModules.theme
+
+                ./systems/cdt
+
+                # TODO move user definition into its own file
                 ({ pkgs, ... }: {
+                  users.users.${myUserName} = {
+                    name = "${myUserName}";
+                    home = "/home/${myUserName}";
+                    shell = pkgs.fish;
+                    isNormalUser = true;
+                    extraGroups = [ "users" "wheel" "video" "audio" ];
+                  };
                   system.stateVersion = "23.11";
+
+                  home-manager.extraSpecialArgs = {inherit inputs self;};
                 })
-                # Your home-manager configuration
+
                 self.nixosModules.home-manager
                 {
                   home-manager.users.${myUserName} = {
                     imports = [
-                      self.homeModules.common # See below for "homeModules"!
+                      self.homeModules.common
                       self.homeModules.linux
                     ];
                     home.stateVersion = "23.11";
