@@ -1,29 +1,21 @@
-{ self, ...}:
-
 {
-  flake = {
-    homeModules = {    
-      common = {
-        imports = [
-          ./common
-        ];
-      };
+  lib,
+  self,
+  inputs,
+  ...
+}: {
+  imports = [
+    ./specialisations.nix
+    ./terminal
+    self.nixosModules.theme
+    inputs.matugen.nixosModules.default
+  ];
 
-      linux = {
-        imports = [
-          self.inputs.anyrun.homeManagerModules.default
-          ./nixos/hyprland
-          ./nixos/chromium
-          ./nixos/terminal/emulator/foot.nix
-          ./nixos/mpv
-          ./nixos/gtk.nix
-          ./nixos/services/hyprpaper.nix
-        ];
-      };
-
-      darwin = {
-        
-      };
-    }; 
+  home = {
+    username = "cooper";
+    homeDirectory = "/home/cooper";
+    stateVersion = "23.11";
   };
+
+  programs.home-manager.enable = true;
 }

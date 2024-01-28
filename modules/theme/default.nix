@@ -1,4 +1,4 @@
-{lib, ... }: {
+{lib, ...}: {
   options.theme = {
     name = lib.mkOption {
       description = ''
@@ -9,7 +9,7 @@
         programs' themes based on this option.
       '';
       type = lib.types.str;
-      example = lib.literalExample "catppuccin-mocha";
+      example = lib.literalExample "catppuccin-latte";
       default = "dark";
     };
 
