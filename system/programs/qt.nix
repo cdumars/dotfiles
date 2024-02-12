@@ -1,7 +1,11 @@
-{
+{pkgs, ...}: {
   qt = {
     enable = true;
-    platformTheme = "gtk2";
-    style = "gtk2";
+    platformTheme = "qt5ct";
   };
+
+  environment.systemPackages = [
+    pkgs.qt6ct
+    pkgs.catppuccin-qt5ct
+  ];
 }

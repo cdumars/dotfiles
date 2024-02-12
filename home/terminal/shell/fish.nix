@@ -34,6 +34,7 @@
       ip = "ip --color";
       l = "eza -l";
       la = "eza -la";
+      lf = "yazi";
       md = "mkdir -p";
 
       us = "systemctl --user";

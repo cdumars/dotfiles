@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [ ./configs/terminal.nix ];
 
   programs.mpv = {
@@ -41,6 +41,11 @@
       "~~/shaders/KrigBilateral.glsl" # https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637
       ];
     };
+
+    scripts = with pkgs; [
+      mpvScripts.autoload
+      mpvScripts.webtorrent-mpv-hook
+    ];
   };
 
   home.file.".config/mpv/shaders" = {

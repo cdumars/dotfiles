@@ -5,7 +5,8 @@
       # set cursor for HL itself
       #"hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       #"systemctl --user start clight"
-      #"swaylock"
+      "foot --server"
+      "swaylock"
     ];
 
     general = {
@@ -14,6 +15,9 @@
       border_size = 1;
       "col.active_border" = "rgba(88888888)";
       "col.inactive_border" = "rgba(00000088)";
+
+      # hide cursor after x seconds
+      cursor_inactive_timeout = 3;
 
       allow_tearing = true;
       resize_on_border = true;
@@ -85,6 +89,10 @@
 
       # we do, in fact, want direct scanout
       no_direct_scanout = false;
+
+      # window swallowing -- how can you live without this?
+      enable_swallow = true;
+      swallow_regex = "^(wezterm|footclient|foot)$";
     };
 
     xwayland.force_zero_scaling = true;
@@ -93,6 +101,7 @@
       "GDK_SCALE,2"
       "XCURSOR_SIZE,32"
       "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+      "WLR_DRM_NO_ATOMIC,1"
     ];
 
     debug.disable_logs = false;

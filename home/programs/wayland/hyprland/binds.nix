@@ -55,7 +55,7 @@ in {
 
         # utility
         # terminal
-        "$mod SHIFT, Return, exec, foot"
+        "$mod SHIFT, Return, exec, footclient"
 
         # anyrun launcher
         "$mod, P, exec, anyrun"

@@ -1,4 +1,4 @@
-{
+{ inputs, pkgs, ...}: {
   imports = [
     ./binds.nix 
     ./config.nix
@@ -11,4 +11,8 @@
       "$mod" = "SUPER";
     };
   };
+
+  home.packages = [
+    inputs.hyprland-contrib.packages.${pkgs.system}.try_swap_workspace
+  ];
 }

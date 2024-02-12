@@ -55,6 +55,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprpaper.url = "github:hyprwm/hyprpaper";
 
     anyrun = {
@@ -73,5 +78,10 @@
     };
 
     yazi.url = "github:sxyazi/yazi";
+
+    ags = {
+      url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

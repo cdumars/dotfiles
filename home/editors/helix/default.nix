@@ -4,7 +4,9 @@
   config,
   ...
 }: {
-  imports = [ ./languages.nix ];
+  imports = [
+    ./languages.nix
+  ];
 
   programs.helix = {
     enable = true;
@@ -59,5 +61,11 @@
         W = ":set whitespace.render none";
       };
     };
+  };
+
+  xdg.configFile."helix/themes" = {
+    enable = true;
+    recursive = true;
+    source = ./themes;
   };
 }

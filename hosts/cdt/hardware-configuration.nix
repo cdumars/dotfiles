@@ -11,7 +11,7 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "usb_storage" "uas" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.vendor-reset ];
 
   boot.kernelParams = [
     "video=DP-1:1920x1080@240"
@@ -41,6 +41,18 @@
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/373B-E7AC";
       fsType = "vfat";
+    };
+
+  fileSystems."/mnt/Big" =
+    { device = "/dev/disk/by-uuid/aaae2721-a459-4bf7-b69d-be04b4dae5cf";
+      fsType = "btrfs";
+      options = [ "compress=zstd" ];
+    };
+
+  fileSystems."/mnt/Bruh" =
+    { device = "/dev/disk/by-uuid/a663013e-eeb1-456a-848d-3f2022fb157d";
+      fsType = "btrfs";
+      options = [ "compress=zstd" ];
     };
 
   swapDevices = [ ];

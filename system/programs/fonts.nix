@@ -6,7 +6,7 @@
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
-
+      (google-fonts.override {fonts = ["Inter"];})
       liberation_ttf
 
       (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})

@@ -6,6 +6,8 @@
 }: {
   imports = [./hardware-configuration.nix];
 
+  networking.hostName = "cdt";
+
   security.polkit.enable = true;
   security.sudo.wheelNeedsPassword = false;
   security.rtkit.enable = true;

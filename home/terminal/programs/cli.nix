@@ -18,6 +18,8 @@
     jaq
     ripgrep
     tldr
+    tree
+    jq
   ];
 
   programs = {

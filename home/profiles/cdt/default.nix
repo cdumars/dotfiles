@@ -10,6 +10,7 @@
   
     # services
     ../../services/wayland/hyprpaper.nix
+    ../../services/ags
 
     # terminal emulators
     ../../terminal/emulators/foot.nix
