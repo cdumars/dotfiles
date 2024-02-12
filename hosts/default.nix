@@ -14,6 +14,9 @@
 
     # get these into the module system
     specialArgs = {inherit inputs self;};
+
+    # fenix
+    packages.${self.pkgs.system}.default = inputs.fenix.packages.${self.pkgs.system}.default.toolchain;
   in {
     cdt = nixosSystem {
       inherit specialArgs;

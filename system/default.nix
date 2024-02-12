@@ -11,6 +11,8 @@ let
 
     ./programs
 
+    ./languages/rust.nix
+
     ./services
     ./services/pipewire.nix
     ./services/greetd.nix
