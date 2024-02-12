@@ -17,6 +17,7 @@ in {
     LESSKEY = "${conf}/less/lesskey";
 
     WINEPREFIX = "${data}/wine";
+    CARGO_HOME = "${data}/cargo";
 
     EDITOR = "hx";
     DIRENV_LOG_FORMAT = "";
