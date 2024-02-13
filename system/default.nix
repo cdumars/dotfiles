@@ -21,6 +21,7 @@ let
   laptop = [
     ./nix
     ./darwin/programs/home-manager.nix
+    ./darwin/programs/fonts.nix
     ./darwin/nix.nix
     ./languages/rust.nix
     ./programs/fish.nix
