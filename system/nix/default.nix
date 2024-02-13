@@ -29,7 +29,7 @@
       keep-derivations = true;
       keep-outputs = true;
 
-      trusted-users = ["root" "@wheel"];
+      trusted-users = if pkgs.system == "x86_64-linux" then ["root" "@wheel"] else ["root" "@staff"];
     };
   };
 }

@@ -5,9 +5,7 @@
 in {
   imports = [
     ./programs
-    ./shell/fish.nix
-    ./shell/starship.nix
-    ./shell/nushell.nix
+    ./shell
   ];
 
   # environment variables

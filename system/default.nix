@@ -17,6 +17,14 @@ let
     ./services/pipewire.nix
     ./services/greetd.nix
   ];
+
+  laptop = [
+    ./nix
+    ./darwin/programs/home-manager.nix
+    ./darwin/nix.nix
+    ./languages/rust.nix
+    ./programs/fish.nix
+  ];
 in {
-  inherit desktop;
+  inherit desktop laptop;
 }
