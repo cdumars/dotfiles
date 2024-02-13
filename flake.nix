@@ -93,5 +93,10 @@
       url = "github:Aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    prism-launcher = {
+      url = "github:PrismLauncher/PrismLauncher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

@@ -7,6 +7,8 @@
 
     ../../programs
     ../../programs/wayland
+
+    ../../programs/prismlauncher.nix
   
     # services
     ../../services/wayland/hyprpaper.nix
