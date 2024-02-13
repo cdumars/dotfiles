@@ -5,7 +5,8 @@
     fontDir.enable = true;
 
     fonts = with pkgs; [
-      (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+      (google-fonts.override {fonts = ["Inter"];})
+      (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly" "LiberationMono"];})
     ];
   };
 }
