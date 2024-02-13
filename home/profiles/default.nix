@@ -19,7 +19,8 @@
 
   inherit (inputs.hm.lib) homeManagerConfiguration;
 
-  pkgs = inputs.nixpkgs.legacyPackages.${self.pkgs.system};
+  pkgs_nixos = inputs.nixpkgs.legacyPackages.x86_64-linux;
+  pkgs_darwin = inputs.nixpkgs.legacyPackages.x86_64-darwin;
 
 in {
   # we need to pass this to nixos' hm module
@@ -27,12 +28,12 @@ in {
 
   flake = {
     homeConfigurations = {
-      "cooper_cdt" = homeManagerConfiguration {
+      "cooper_cdt" = let pkgs = pkgs_nixos; in homeManagerConfiguration {
         modules = homeImports."cooper@cdt";
         inherit pkgs extraSpecialArgs;
       };
 
-      "cooper_clt" = homeManagerConfiguration {
+      "cooper_clt" = let pkgs = pkgs_darwin; in homeManagerConfiguration {
         modules = homeImports."cooper@clt";
         inherit pkgs extraSpecialArgs;
       };

@@ -5,7 +5,6 @@
       # set cursor for HL itself
       #"hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       #"systemctl --user start clight"
-      "foot --server"
       "swaylock"
     ];
 
@@ -76,8 +75,8 @@
     };
 
     misc = {
-      # disable auto polling for config file changes
-      disable_autoreload = true;
+      # enable auto polling for config file changes
+      disable_autoreload = false;
 
       force_default_wallpaper = 0;
 
