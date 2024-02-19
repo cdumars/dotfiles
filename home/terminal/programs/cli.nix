@@ -20,6 +20,7 @@
     tldr
     tree
     jq
+    wget
   ];
 
   programs = {
