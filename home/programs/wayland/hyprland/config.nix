@@ -5,6 +5,8 @@
       # set cursor for HL itself
       #"hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       #"systemctl --user start clight"
+      "exec systemctl --user import-environment PATH && \
+      systemctl --user restart xdg-desktop-portal.service"
       "swaylock"
     ];
 
@@ -91,7 +93,7 @@
 
       # window swallowing -- how can you live without this?
       enable_swallow = true;
-      swallow_regex = "^(wezterm|footclient|foot)$";
+      swallow_regex = "^(Wezterm|footclient|foot)$";
     };
 
     xwayland.force_zero_scaling = true;
