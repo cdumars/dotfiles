@@ -14,5 +14,6 @@
 
   home.packages = [
     inputs.hyprland-contrib.packages.${pkgs.system}.try_swap_workspace
+    pkgs.playerctl
   ];
 }

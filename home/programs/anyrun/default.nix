@@ -17,6 +17,7 @@
         randr
         shell
         symbols
+        rink
       ];
 
       width.fraction = 0.3;
