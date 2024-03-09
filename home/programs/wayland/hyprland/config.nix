@@ -4,8 +4,8 @@
       # set cursor for HL itself
       #"hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       #"systemctl --user start clight"
-      "exec systemctl --user import-environment PATH && \
-      systemctl --user restart xdg-desktop-portal.service"
+      "systemctl --user import-environment PATH"
+      "systemctl --user restart xdg-desktop-portal.service"
       "swaylock"
     ];
 
