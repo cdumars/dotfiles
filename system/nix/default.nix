@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./nixpkgs.nix  
+    ./nixpkgs.nix
   ];
 
   # need git for flakes
@@ -29,7 +29,10 @@
       keep-derivations = true;
       keep-outputs = true;
 
-      trusted-users = if pkgs.system == "x86_64-linux" then ["root" "@wheel"] else ["root" "@staff"];
+      trusted-users =
+        if pkgs.system == "x86_64-linux"
+        then ["root" "@wheel"]
+        else ["root" "@staff"];
     };
   };
 }

@@ -3,17 +3,17 @@
   pkgs,
   ...
 }: let
-  browser = [ "chromium" ];
-  imageViewer = [ "imv" ];
-  videoPlayer = [ "mpv" ];
-  audioPlayer = [ "mpv" ];
+  browser = ["chromium"];
+  imageViewer = ["imv"];
+  videoPlayer = ["mpv"];
+  audioPlayer = ["mpv"];
 
   xdgAssociations = type: program: list:
     builtins.listToAttrs (map (e: {
-      name = "${type}/${e}";
-      value = program;
-    })
-    list);
+        name = "${type}/${e}";
+        value = program;
+      })
+      list);
 
   image = xdgAssociations "image" imageViewer ["png" "svg" "jpeg" "git"];
   video = xdgAssociations "video" videoPlayer ["mp4" "avi" "mkv" "webm"];
@@ -37,16 +37,16 @@
 
   # XDG MIME types
   associations = builtins.mapAttrs (_: v: (map (e: "${e}.desktop") v)) ({
-    "applications/pdf" = ["org.pwmt.zathura-pdf-mupdf"];
-    "text/html" = browser;
-    "text/plain" = ["Helix"];
-    "x-scheme-handler/chrome" = ["chromium-browser"];
-    "inode/directory" = ["yazi"];
-  }
-  // image
-  // video
-  // audio
-  // browserTypes);
+      "applications/pdf" = ["org.pwmt.zathura-pdf-mupdf"];
+      "text/html" = browser;
+      "text/plain" = ["Helix"];
+      "x-scheme-handler/chrome" = ["chromium-browser"];
+      "inode/directory" = ["yazi"];
+    }
+    // image
+    // video
+    // audio
+    // browserTypes);
 in {
   xdg = {
     enable = true;

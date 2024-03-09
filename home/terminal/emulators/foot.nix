@@ -1,5 +1,4 @@
-{ pkgs, ...}:
-let
+{pkgs, ...}: let
   colors = {
     dark = {
       foreground = "cdd6f4"; # Text
@@ -26,36 +25,36 @@ in {
   programs.foot = {
     enable = true;
     settings = {
-    main = {
-      font = "monospace:size=12";
-      box-drawings-uses-font-glyphs = "yes";
-      pad = "0x0 center";
-      notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
-      selection-target = "clipboard";
-    };
-    scrollback = {
-      lines = 10000;
-      multiplier = 3;
-    };
+      main = {
+        font = "monospace:size=12";
+        box-drawings-uses-font-glyphs = "yes";
+        pad = "0x0 center";
+        notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
+        selection-target = "clipboard";
+      };
+      scrollback = {
+        lines = 10000;
+        multiplier = 3;
+      };
 
-    url = {
-      launch = "xdg-open \${url}";
-      label-letters = "sadfjklewcmpgh";
-      osc8-underline = "url-mode";
-      protocols = "http, https, ftp, ftps, file";
-      uri-characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.,~:;/?#@!$&%*+=\"'()[]";
-    };
+      url = {
+        launch = "xdg-open \${url}";
+        label-letters = "sadfjklewcmpgh";
+        osc8-underline = "url-mode";
+        protocols = "http, https, ftp, ftps, file";
+        uri-characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.,~:;/?#@!$&%*+=\"'()[]";
+      };
 
-    cursor = {
-      style = "beam";
-      beam-thickness = 1;
-    };
+      cursor = {
+        style = "beam";
+        beam-thickness = 1;
+      };
 
-    colors =
-      {
-        alpha = 0.9;
-      }
-      // colors.dark;
+      colors =
+        {
+          alpha = 0.9;
+        }
+        // colors.dark;
     };
   };
 }

@@ -13,7 +13,7 @@
 
     consoleLogLevel = 3;
     kernelParams = [
-#      "quiet"
+      #      "quiet"
       "systemd.show_status=auto"
       "rd.udev.log_level=3"
     ];
@@ -23,6 +23,6 @@
       systemd-boot.enable = true;
     };
 
-#    plymouth.enable = true;
+    #    plymouth.enable = true;
   };
 }

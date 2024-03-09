@@ -9,7 +9,7 @@
     ../../programs/wayland
 
     ../../programs/prismlauncher.nix
-  
+
     # services
     ../../services/wayland/hyprpaper.nix
     ../../services/ags

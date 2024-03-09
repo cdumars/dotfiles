@@ -29,17 +29,17 @@
     ];
 
     shellAliases =
-    {
-      grep = "grep --color";
-      ip = "ip --color";
-      l = "eza -l";
-      la = "eza -la";
-      lf = "yazi";
-      md = "mkdir -p";
+      {
+        grep = "grep --color";
+        ip = "ip --color";
+        l = "eza -l";
+        la = "eza -la";
+        lf = "yazi";
+        md = "mkdir -p";
 
-      us = "systemctl --user";
-      rs = "sudo systemctl";
-    }
-    // lib.optionalAttrs (config.programs.bat.enable == true) {cat = "bat";};
+        us = "systemctl --user";
+        rs = "sudo systemctl";
+      }
+      // lib.optionalAttrs (config.programs.bat.enable == true) {cat = "bat";};
   };
 }

@@ -1,6 +1,6 @@
 {
   programs = {
-#    less.enable = true;
+    #    less.enable = true;
 
     fish = {
       enable = true;

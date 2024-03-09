@@ -16,11 +16,13 @@
     username = "cooper";
 
     homeDirectory = let
-      dir = if pkgs.system == "x86_64-darwin"
+      dir =
+        if pkgs.system == "x86_64-darwin"
         then lib.mkForce "/Users/cooper"
         else "/home/cooper";
-    in dir;
-    
+    in
+      dir;
+
     stateVersion = "23.11";
   };
 

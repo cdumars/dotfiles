@@ -1,5 +1,4 @@
-{config, ...}:
-{
+{config, ...}: {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       # set cursor for HL itself

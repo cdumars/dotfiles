@@ -23,7 +23,7 @@
       width.fraction = 0.3;
       y.absolute = 15;
       hidePluginInfo = true;
-      closeOnClick = true;  
+      closeOnClick = true;
     };
 
     extraCss = builtins.readFile (./. + "/style-${config.theme.name}.css");

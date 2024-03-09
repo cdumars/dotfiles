@@ -8,8 +8,8 @@
       resyncTimer = "10m";
     };
 
-  # FLATPAK
-  flatpak.enable = true;
+    # FLATPAK
+    flatpak.enable = true;
   };
   environment.systemPackages = with pkgs; [
     ostree

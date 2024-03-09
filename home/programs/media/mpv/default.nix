@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  imports = [ ./configs/terminal.nix ];
+{pkgs, ...}: {
+  imports = [./configs/terminal.nix];
 
   programs.mpv = {
     enable = true;
@@ -33,12 +33,11 @@
 
       linear-downscaling = false;
       glsl-shaders-append = [
-      
-      "~~/shaders/SSimDownscaler.glsl" # https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10
+        "~~/shaders/SSimDownscaler.glsl" # https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10
 
-      "~~/shaders/SSimSuperRes.glsl" # https://gist.github.com/igv/2364ffa6e81540f29cb7ab4c9bc05b6b
+        "~~/shaders/SSimSuperRes.glsl" # https://gist.github.com/igv/2364ffa6e81540f29cb7ab4c9bc05b6b
 
-      "~~/shaders/KrigBilateral.glsl" # https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637
+        "~~/shaders/KrigBilateral.glsl" # https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637
       ];
     };
 

@@ -1,6 +1,10 @@
-{ inputs, pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
-    ./binds.nix 
+    ./binds.nix
     ./config.nix
     ./anyrun
   ];

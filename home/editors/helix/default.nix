@@ -47,7 +47,7 @@
         };
         indent-guides.render = true;
         lsp.display-inlay-hints = true;
-        statusline.center = [ "position-percentage" ];
+        statusline.center = ["position-percentage"];
         true-color = true;
         whitespace.characters = {
           newline = "↴";

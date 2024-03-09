@@ -7,7 +7,7 @@
     #${name} {
       background-image: image(url("${pkgs.wlogout}/share/wlogout/icons/${name}.png"));
       }
-    '';
+  '';
 in {
   programs.wlogout = {
     enable = true;

@@ -51,7 +51,7 @@
       ]
       ++ prettierLangs langs;
 
-      language-server = {
+    language-server = {
       bash-language-server = {
         command = "${pkgs.nodePackages.bash-language-server}/bin/bash-language-server";
         args = ["start"];

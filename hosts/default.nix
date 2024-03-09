@@ -4,7 +4,7 @@
   homeImports,
   ...
 }: {
-  flake = let 
+  flake = let
     # shorten paths
     inherit (inputs.nixpkgs.lib) nixosSystem;
     inherit (inputs.nix-darwin.lib) darwinSystem;
@@ -28,7 +28,7 @@
             ./cdt
             "${mod}/programs/hyprland.nix"
             "${mod}/programs/steam.nix"
-  
+
             {
               home-manager = {
                 users.cooper.imports = homeImports."cooper@cdt";
@@ -38,7 +38,7 @@
           ];
       };
     };
-    
+
     darwinConfigurations = {
       clt = darwinSystem {
         inherit specialArgs;

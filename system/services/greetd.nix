@@ -16,7 +16,7 @@
 
       ${pkgs.hyprland}/bin/hyprctl dispatch exit
     '';
-    
+
     session = {
       command = "${lib.getExe hypr-run}";
       user = "cooper";
