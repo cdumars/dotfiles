@@ -15,7 +15,10 @@
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usbhid" "usb_storage" "uas"];
   boot.initrd.kernelModules = ["amdgpu"];
   boot.kernelModules = ["kvm-amd"];
-  boot.extraModulePackages = [config.boot.kernelPackages.vendor-reset];
+  boot.extraModulePackages = [
+    # build error as of 14 Mar 2024
+    #config.boot.kernelPackages.vendor-reset
+  ];
 
   boot.kernelParams = [
     "video=DP-1:1920x1080@240"

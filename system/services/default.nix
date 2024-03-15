@@ -10,6 +10,9 @@
 
     # FLATPAK
     flatpak.enable = true;
+
+    # UDISKS
+    udisks2.enable = true;
   };
   environment.systemPackages = with pkgs; [
     ostree

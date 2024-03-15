@@ -61,7 +61,8 @@
     };
 
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      # further commits break wezterm; see https://github.com/hyprwm/Hyprland/issues/4806
+      url = "github:hyprwm/Hyprland/af0c8e299bbbf1726cecfde683137cfd4a6b8642";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

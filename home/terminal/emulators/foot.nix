@@ -28,7 +28,7 @@ in {
       main = {
         font = "monospace:size=12";
         box-drawings-uses-font-glyphs = "yes";
-        pad = "0x0 center";
+        pad = "8x8 center";
         notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
         selection-target = "clipboard";
       };
