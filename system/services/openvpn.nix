@@ -1,5 +1,9 @@
 {
   services.openvpn.servers = {
-    los-angeles = {config = ''config /home/cooper/Documents/fastestvpn/udp/usa-losangeles-udp.ovpn '';};
+    los-angeles = {
+      config = ''config /home/cooper/Documents/fastestvpn/udp/usa-losangeles-udp.ovpn '';
+      autoStart = false;
+      updateResolvConf = true;
+    };
   };
 }
