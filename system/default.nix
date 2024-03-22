@@ -16,6 +16,7 @@ let
     ./services
     ./services/pipewire.nix
     ./services/greetd.nix
+    ./services/openvpn.nix
   ];
 
   laptop = [
