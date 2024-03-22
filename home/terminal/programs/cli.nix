@@ -21,6 +21,7 @@
     tree
     jq
     wget
+    yt-dlp
   ];
 
   programs = {
