@@ -1,4 +1,8 @@
-{pkgs, lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   services.jellyfin.enable = true;
   systemd.services.jellyfin.wantedBy = lib.mkForce [];
   environment.systemPackages = with pkgs; [
