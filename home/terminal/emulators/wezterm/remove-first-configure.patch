@@ -1,0 +1,52 @@
+diff --git a/window/src/os/wayland/window.rs b/window/src/os/wayland/window.rs
+index e6cd1d4f6..41a2af7be 100644
+--- a/window/src/os/wayland/window.rs
++++ b/window/src/os/wayland/window.rs
+@@ -179,8 +179,6 @@ impl WaylandWindow {
+         let window_id = conn.next_window_id();
+         let pending_event = Arc::new(Mutex::new(PendingEvent::default()));
+ 
+-        let (pending_first_configure, wait_configure) = async_channel::bounded(1);
+-
+         let qh = conn.event_queue.borrow().handle();
+ 
+         // We need user data so we can get the window_id => WaylandWindowInner during a handler
+@@ -292,7 +290,6 @@ impl WaylandWindow {
+             pending_mouse,
+             pointer_surface,
+ 
+-            pending_first_configure: Some(pending_first_configure),
+             frame_callback: None,
+ 
+             text_cursor: None,
+@@ -317,8 +314,6 @@ impl WaylandWindow {
+             windows.borrow_mut().insert(window_id, inner.clone());
+         };
+ 
+-        wait_configure.recv().await?;
+-
+         Ok(window_handle)
+     }
+ }
+@@ -515,7 +510,6 @@ pub struct WaylandWindowInner {
+     pub(super) key_repeat: Option<(u32, Arc<Mutex<KeyRepeatState>>)>,
+     pub(super) pending_event: Arc<Mutex<PendingEvent>>,
+     pub(super) pending_mouse: Arc<Mutex<PendingMouse>>,
+-    pending_first_configure: Option<async_channel::Sender<()>>,
+     frame_callback: Option<WlCallback>,
+     invalidated: bool,
+     // font_config: Rc<FontConfiguration>,
+@@ -885,13 +879,6 @@ impl WaylandWindowInner {
+         if pending.refresh_decorations && self.window.is_some() {
+             self.refresh_frame();
+         }
+-        if pending.had_configure_event && self.window.is_some() {
+-            log::debug!("Had configured an event");
+-            if let Some(notify) = self.pending_first_configure.take() {
+-                // Allow window creation to complete
+-                notify.try_send(()).ok();
+-            }
+-        }
+     }
+ 
+     fn set_cursor(&mut self, cursor: Option<MouseCursor>) {

@@ -17,6 +17,7 @@ let
     ./services/pipewire.nix
     ./services/greetd.nix
     ./services/openvpn.nix
+    ./services/jellyfin.nix
   ];
 
   laptop = [

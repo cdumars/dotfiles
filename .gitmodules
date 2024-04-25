@@ -1,0 +1,3 @@
+[submodule "pkgs/keroro"]
+	path = pkgs/keroro
+	url = https://github.com/cdumars/keroro

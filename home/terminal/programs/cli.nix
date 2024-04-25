@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = with pkgs; [
     # archives
     zip
@@ -8,6 +12,8 @@
 
     # misc
     libnotify
+
+    inputs.nyaa.packages.${pkgs.system}.default
 
     # utils
     du-dust

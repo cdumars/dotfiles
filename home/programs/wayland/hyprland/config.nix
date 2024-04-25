@@ -6,6 +6,7 @@
       #"systemctl --user start clight"
       "systemctl --user import-environment PATH"
       "systemctl --user restart xdg-desktop-portal.service"
+      "foot --server"
       "swaylock"
     ];
 

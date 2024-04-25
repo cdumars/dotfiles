@@ -6,7 +6,13 @@
   programs.wezterm = {
     enable = true;
 
-    package = inputs.wezterm.packages.${pkgs.system}.default;
+    package = inputs.wezterm.packages.${pkgs.system}.default.overrideAttrs (old: {
+      patches =
+        (old.patches or [])
+        ++ [
+          ./remove-first-configure.patch
+        ];
+    });
 
     extraConfig = ''
       -- local wezterm = require "wezterm"

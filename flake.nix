@@ -9,6 +9,7 @@
         ./home/profiles
         ./hosts
         ./modules
+        ./pkgs
       ];
 
       perSystem = {
@@ -56,13 +57,14 @@
     };
 
     fenix = {
-      url = "github:nix-community/fenix";
+      url = "github:nix-community/fenix/monthly";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland = {
       # further commits break wezterm; see https://github.com/hyprwm/Hyprland/issues/4806
-      url = "github:hyprwm/Hyprland/af0c8e299bbbf1726cecfde683137cfd4a6b8642";
+      #url = "github:hyprwm/Hyprland/af0c8e299bbbf1726cecfde683137cfd4a6b8642";
+      url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -97,6 +99,16 @@
 
     prism-launcher = {
       url = "github:PrismLauncher/PrismLauncher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nyaa = {
+      url = "github:Beastwick18/nyaa";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    keroro = {
+      url = "github:cdumars/keroro";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

@@ -41,9 +41,9 @@
       ];
     };
 
-    scripts = with pkgs; [
-      mpvScripts.autoload
-      mpvScripts.webtorrent-mpv-hook
+    scripts = with pkgs.mpvScripts; [
+      autoload
+      webtorrent-mpv-hook
     ];
   };
 
