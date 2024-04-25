@@ -586,11 +586,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1714010424,
-        "narHash": "sha256-PwKi61RAOgz8KFQKmQfngTmLUscEWBrPIHoYlyhGxtY=",
+        "lastModified": 1714075233,
+        "narHash": "sha256-+lSyBXBwJKDJ+xkMakcw5JnFSezJXM4w3UYnz2bbOd8=",
         "owner": "cdumars",
         "repo": "keroro",
-        "rev": "fca341a07a2f8c0a30d3d19bd097bcc03b03ef30",
+        "rev": "a6e1b9bfb67132048a19902e7c9c8e9d8a3a02ee",
         "type": "github"
       },
       "original": {
