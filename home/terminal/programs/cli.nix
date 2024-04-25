@@ -14,6 +14,7 @@
     libnotify
 
     inputs.nyaa.packages.${pkgs.system}.default
+    inputs.keroro.packages.${pkgs.system}.default
 
     # utils
     du-dust
