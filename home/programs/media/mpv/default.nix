@@ -1,4 +1,8 @@
-{inputs, pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [./configs/terminal.nix];
 
   programs.mpv = {
@@ -41,10 +45,12 @@
       ];
     };
 
-    scripts = with pkgs.mpvScripts; [
-      autoload
-      webtorrent-mpv-hook
-    ] ++ [inputs.keroro.packages.${pkgs.system}.mpvScripts.default];
+    scripts = with pkgs.mpvScripts;
+      [
+        autoload
+        webtorrent-mpv-hook
+      ]
+      ++ [inputs.keroro.packages.${pkgs.system}.mpvScripts.default];
   };
 
   home.file.".config/mpv/shaders" = {

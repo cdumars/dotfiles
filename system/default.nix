@@ -6,8 +6,11 @@ let
 
     ./hardware/opengl.nix
     ./hardware/bluetooth.nix
+    ./hardware/udev.nix
 
     ./network/default.nix
+
+    ./nix
 
     ./programs
 

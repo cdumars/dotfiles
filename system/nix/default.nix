@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./nixpkgs.nix
+    ./nix-ld.nix
   ];
 
   # need git for flakes

@@ -5,6 +5,7 @@
     ./users.nix
     ../nix
     ../programs/fish.nix
+    ./systemd.nix
   ];
 
   documentation.dev.enable = true;

@@ -6,6 +6,11 @@
     #    dns = "systemd-resolved";
   };
 
+  networking.firewall = {
+    enable = false;
+    allowedTCPPorts = [22 80 443 5000 5900 8000 8080 8096];
+  };
+
   services = {
     openssh = {
       enable = true;

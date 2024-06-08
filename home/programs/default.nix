@@ -5,6 +5,7 @@
     ./media
     ./gtk.nix
     ./qbittorrent.nix
+    ./gnome
   ];
 
   home.packages = with pkgs; [

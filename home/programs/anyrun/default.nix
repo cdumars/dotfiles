@@ -14,7 +14,8 @@
     config = {
       plugins = with inputs.anyrun.packages.${pkgs.system}; [
         applications
-        randr
+        #crashes on new version of hyprland for some reason -- should check out
+        #randr
         shell
         symbols
         rink

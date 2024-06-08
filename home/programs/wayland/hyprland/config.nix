@@ -17,11 +17,13 @@
       "col.active_border" = "rgba(88888888)";
       "col.inactive_border" = "rgba(00000088)";
 
-      # hide cursor after x seconds
-      cursor_inactive_timeout = 3;
-
       allow_tearing = true;
       resize_on_border = true;
+    };
+
+    cursor = {
+      # hide cursor after x seconds
+      inactive_timeout = 3;
     };
 
     decoration = {
