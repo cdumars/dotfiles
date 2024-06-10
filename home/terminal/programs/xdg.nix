@@ -41,7 +41,7 @@
       "text/html" = browser;
       "text/plain" = ["Helix"];
       "x-scheme-handler/chrome" = ["chromium-browser"];
-      "inode/directory" = ["org.gnome.FileRoller"];
+      "inode/directory" = ["org.gnome.Nautilus"];
     }
     // image
     // video
