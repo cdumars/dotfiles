@@ -7,5 +7,6 @@
   environment.systemPackages = [
     pkgs.qt6ct
     pkgs.catppuccin-qt5ct
+    pkgs.qt6.qtwayland
   ];
 }
