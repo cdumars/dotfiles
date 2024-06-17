@@ -55,7 +55,7 @@ in {
 
         # utility
         # terminal
-        "$mod SHIFT, Return, exec, footclient"
+        "$mod SHIFT, Return, exec, wezterm start"
 
         # anyrun launcher
         "$mod, P, exec, anyrun"
