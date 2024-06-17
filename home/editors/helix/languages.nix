@@ -21,14 +21,14 @@
       langs = ["css" "scss" "html"];
     in
       [
-        {
-          name = "bash";
-          auto-format = true;
-          formatter = {
-            command = "${pkgs.shfmt}/bin/shfmt";
-            args = ["-i" "2"];
-          };
-        }
+        #{
+        #  name = "bash";
+        #  auto-format = true;
+        #  formatter = {
+        #    command = "${pkgs.shfmt}/bin/shfmt";
+        #    args = ["-i" "2"];
+        #  };
+        #}
         {
           name = "javascript";
           auto-format = true;
