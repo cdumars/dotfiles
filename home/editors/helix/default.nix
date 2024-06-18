@@ -22,8 +22,7 @@
             clang-tools
             marksman
             nil
-            # remove bash-language-server until NixOS/nixpkgs#319882 lands
-            #nodePackages.bash-language-server
+            nodePackages.bash-language-server
             nodePackages.vscode-css-languageserver-bin
             shellcheck
           ])
