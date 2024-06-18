@@ -25,6 +25,7 @@
       gtk3
       icu
       libGL
+      libGLU
       libappindicator-gtk3
       libdrm
       libglvnd
@@ -58,6 +59,8 @@
       xorg.libxcb
       xorg.libxkbfile
       xorg.libxshmfence
+      xorg.libICE
+      xorg.libSM
       zlib
     ];
   };

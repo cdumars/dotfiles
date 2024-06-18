@@ -49,6 +49,7 @@
       [
         autoload
         webtorrent-mpv-hook
+        mpv-webm
       ]
       ++ [inputs.keroro.packages.${pkgs.system}.mpvScripts.default];
   };

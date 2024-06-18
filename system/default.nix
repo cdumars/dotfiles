@@ -13,6 +13,7 @@ let
     ./nix
 
     ./programs
+    ./programs/koboldcpp.nix
 
     ./languages/rust.nix
 

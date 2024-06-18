@@ -27,7 +27,7 @@
           ++ [
             ./cdt
             "${mod}/programs/hyprland.nix"
-            "${mod}/programs/steam.nix"
+            "${mod}/programs/games.nix"
 
             {
               home-manager = {

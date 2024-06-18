@@ -6,7 +6,6 @@
   imports = [
     ./binds.nix
     ./config.nix
-    ./anyrun
   ];
 
   wayland.windowManager.hyprland = {

@@ -19,5 +19,7 @@ in {
 
     EDITOR = "hx";
     DIRENV_LOG_FORMAT = "";
+
+    HSA_OVERRIDE_GFX_VERSION = "11.0.0";
   };
 }

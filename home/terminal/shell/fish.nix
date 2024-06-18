@@ -39,6 +39,8 @@
 
         us = "systemctl --user";
         rs = "sudo systemctl";
+
+        dots = "cd ~/Documents/dotfiles/";
       }
       // lib.optionalAttrs (config.programs.bat.enable == true) {cat = "bat";};
   };
