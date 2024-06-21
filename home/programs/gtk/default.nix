@@ -30,14 +30,24 @@
     theme = {
       name =
         if config.theme.name == "light"
-        then "Catppuccin-Latte-Standard-Blue-Dark"
-        else "Catppuccin-Mocha-Standard-Blue-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        variant =
-          if config.theme.name == "light"
-          then "latte"
-          else "mocha";
-      };
+        then "catppuccin-latte-blue-standard+default"
+        else "catppuccin-mocha-blue-standard+default";
+      # for some reason the theme wont build from nixpkgs
+      #package = inputs.catppuccin-nixpkgs.legacyPackages.${pkgs.system}.catppuccin-gtk.override {
+      #  variant =
+      #    if config.theme.name == "light"
+      #    then "latte"
+      #    else "mocha";
+      #};
     };
+  };
+  home.sessionVariables = {
+    GTK_THEME = "catppuccin-mocha-blue-standard+default";
+  };
+
+  home.file.".local/share/themes" = {
+    enable = true;
+    source = ./themes;
+    recursive = true;
   };
 }

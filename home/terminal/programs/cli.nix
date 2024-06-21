@@ -22,7 +22,9 @@
     ncdu
     fd
     file
+    fzf
     jaq
+    killall
     ripgrep
     tldr
     tree

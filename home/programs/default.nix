@@ -3,7 +3,7 @@
     ./anyrun
     ./browsers/chromium.nix
     ./media
-    ./gtk.nix
+    ./gtk
     ./qbittorrent.nix
     ./gnome
   ];
