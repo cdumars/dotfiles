@@ -28,6 +28,10 @@
             ./cdt
             "${mod}/programs/hyprland.nix"
             "${mod}/programs/games.nix"
+            "${mod}/services/greetd.nix"
+            "${mod}/services/openvpn.nix"
+            "${mod}/services/jellyfin.nix"
+            "${mod}/languages/rust.nix"
 
             {
               home-manager = {
