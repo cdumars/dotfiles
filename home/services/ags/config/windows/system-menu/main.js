@@ -13,7 +13,7 @@ const SystemMenuBox = () =>
 
     children: [
       Toggles(),
-      PowerProfiles(),
+      //PowerProfiles(),
       Sliders(),
       BatteryInfo(),
     ],

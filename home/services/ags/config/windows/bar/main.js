@@ -17,7 +17,7 @@ const SystemInfo = () =>
       children: [
         Net(),
         Bluetooth(),
-        Battery(),
+        //Battery(),
       ],
     }),
   })

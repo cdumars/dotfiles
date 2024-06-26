@@ -59,7 +59,7 @@ export default () =>
     className: "battery-info",
 
     children: [
-      BatteryBox(),
+      //BatteryBox(),
       PowerButton(),
     ],
   });

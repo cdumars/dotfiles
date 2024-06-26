@@ -70,7 +70,7 @@ export default () =>
         Audio.disconnect(connID);
         self.children = [
           Slider(vol()),
-          Slider(brightness()),
+          //Slider(brightness()),
         ];
       });
     },
