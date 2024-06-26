@@ -27,11 +27,15 @@
     };
   };
 
-  environment.systemPackages = let
-    lutris = pkgs.lutris.override {
-      # tentatively fix gamescope?
+  programs.gamescope = {
+    enable = true;
+  };
+
+  environment.systemPackages = [
+    (pkgs.lutris.override {
       extraPkgs = pkgs:
         with pkgs; [
+          SDL2
           pango
           libthai
           harfbuzz
@@ -39,16 +43,14 @@
           libkrb5
           libpng
           libpulseaudio
-          pipewire
           libvorbis
+          pipewire
           stdenv.cc.cc.lib
           xorg.libXcursor
           xorg.libXi
           xorg.libXinerama
           xorg.libXScrnSaver
         ];
-    };
-  in [
-    lutris
+    })
   ];
 }

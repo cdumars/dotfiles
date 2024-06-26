@@ -34,13 +34,19 @@
         ip = "ip --color";
         l = "eza -l";
         la = "eza -la";
+        tree = "eza -T";
         lf = "yazi";
         md = "mkdir -p";
+        rm = "trash-put";
 
+        sudo = "doas";
         us = "systemctl --user";
-        rs = "sudo systemctl";
+        rs = "doas systemctl";
 
         dots = "cd ~/Documents/dotfiles/";
+        fetch = "fastfetch -c neofetch.jsonc";
+        ufetch = "fastfetch -c examples/8.jsonc";
+
       }
       // lib.optionalAttrs (config.programs.bat.enable == true) {cat = "bat";};
   };

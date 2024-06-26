@@ -4,6 +4,8 @@
       # set cursor for HL itself
       #"hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       #"systemctl --user start clight"
+      #fix theme in file picker
+      "dbus-update-activation-environment --systemd --all"
       "systemctl --user import-environment PATH"
       "systemctl --user restart xdg-desktop-portal.service"
       "foot --server"

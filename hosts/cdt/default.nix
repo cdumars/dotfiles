@@ -9,7 +9,18 @@
   networking.hostName = "cdt";
 
   security.polkit.enable = true;
-  security.sudo.wheelNeedsPassword = false;
+  #security.sudo.wheelNeedsPassword = false;
+  security.sudo.enable = false;
+  security.doas = {
+    enable = true;
+    extraRules = [
+      {
+        groups = ["wheel"];
+        keepEnv = true;
+        noPass = true;
+      }
+    ];
+  };
   security.rtkit.enable = true;
 
   hardware.opengl = {

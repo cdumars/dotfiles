@@ -23,4 +23,8 @@
 
   # Don't wait for network startup
   systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
+  systemd.services.NetworkManager = {
+    enable = true;
+    wants = ["systemd-resolved.service"];
+  };
 }

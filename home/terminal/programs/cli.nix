@@ -12,6 +12,7 @@
 
     # misc
     libnotify
+    fastfetch
 
     inputs.nyaa.packages.${pkgs.system}.default
     inputs.keroro.packages.${pkgs.system}.default
@@ -27,10 +28,10 @@
     killall
     ripgrep
     tldr
-    tree
     jq
     wget
     yt-dlp
+    trash-cli
   ];
 
   programs = {

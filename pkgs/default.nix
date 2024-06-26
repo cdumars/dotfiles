@@ -1,13 +1,7 @@
-{
-  systems = ["x86_64-linux" "x86_64-darwin"];
-
-  perSystem = {
-    pkgs,
-    inputs',
-    ...
-  }: {
-    packages = {
-      keroro = pkgs.callPackage ./keroro {};
-    };
-  };
+{pkgs, ...}: {
+  nixpkgs.overlays = [
+    (final: prev: {
+      irony-mod-manager = pkgs.callPackage ./irony-mod-manager.nix;
+    })
+  ];
 }
