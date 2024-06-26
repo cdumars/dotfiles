@@ -7,8 +7,4 @@
     ./qbittorrent.nix
     ./gnome
   ];
-
-  home.packages = with pkgs; [
-    mangohud
-  ];
 }

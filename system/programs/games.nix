@@ -18,6 +18,7 @@
           libpulseaudio
           libvorbis
           pipewire
+          mangohud
           stdenv.cc.cc.lib
           xorg.libXcursor
           xorg.libXi
@@ -45,6 +46,7 @@
           libpulseaudio
           libvorbis
           pipewire
+          mangohud
           stdenv.cc.cc.lib
           xorg.libXcursor
           xorg.libXi
