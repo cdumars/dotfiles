@@ -28,6 +28,28 @@
       }
     ];
 
+    functions = {
+      yy = {
+        body = ''
+          set tmp (mktemp -t "yazi-cwd.XXXXXX")
+          yazi $argv --cwd-file="$tmp"
+          if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+            cd -- "$cwd"
+          end
+          rm -f "$tmp"
+        '';
+      };
+
+      anime = {
+        body = ''
+          set p (find /mnt/Bruh/Anime -type d | fzf | string trim)
+          if test -n "$p"
+            mpv "$p"
+          end
+        '';
+      };
+    };
+
     shellAliases =
       {
         grep = "grep --color";
@@ -38,6 +60,8 @@
         lf = "yazi";
         md = "mkdir -p";
         rm = "trash-put";
+        "7z" = "7zz";
+        y = "yazi";
 
         sudo = "doas";
         us = "systemctl --user";
@@ -46,7 +70,6 @@
         dots = "cd ~/Documents/dotfiles/";
         fetch = "fastfetch -c neofetch.jsonc";
         ufetch = "fastfetch -c examples/8.jsonc";
-
       }
       // lib.optionalAttrs (config.programs.bat.enable == true) {cat = "bat";};
   };
