@@ -46,7 +46,6 @@
         dots = "cd ~/Documents/dotfiles/";
         fetch = "fastfetch -c neofetch.jsonc";
         ufetch = "fastfetch -c examples/8.jsonc";
-
       }
       // lib.optionalAttrs (config.programs.bat.enable == true) {cat = "bat";};
   };

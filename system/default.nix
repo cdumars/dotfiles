@@ -18,6 +18,10 @@ let
     ./services/pipewire.nix
   ];
 
+  server = [
+    ./nix
+  ];
+
   laptop = [
     ./nix
     ./darwin/programs/home-manager.nix
@@ -27,5 +31,5 @@ let
     ./programs/fish.nix
   ];
 in {
-  inherit desktop laptop;
+  inherit desktop server laptop;
 }
