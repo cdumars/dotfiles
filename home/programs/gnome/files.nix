@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    gnome.nautilus
+    nautilus
     ffmpegthumbs
     ffmpegthumbnailer
-    gnome.file-roller
+    file-roller
   ];
 }

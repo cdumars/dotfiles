@@ -25,7 +25,7 @@
 
       # AUDIO
       volume-max = 100;
-      volume = 70;
+      volume = 100;
 
       # GENERAL
       keep-open = true;

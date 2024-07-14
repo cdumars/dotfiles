@@ -32,11 +32,6 @@
       source = ./bin;
       recursive = true;
     };
-    ".local/opt" = {
-      enable = true;
-      source = ./opt;
-      recursive = true;
-    };
   };
 
   home.sessionPath = ["/home/cooper/.local/bin"];
