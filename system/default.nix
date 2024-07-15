@@ -16,6 +16,7 @@ let
 
     ./services
     ./services/pipewire.nix
+    ./services/gvfs.nix
   ];
 
   laptop = [

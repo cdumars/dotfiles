@@ -97,7 +97,7 @@
 
       # window swallowing -- how can you live without this?
       enable_swallow = true;
-      swallow_regex = "^(Wezterm|footclient|foot)$";
+      swallow_regex = "^(org.wezfurlong.wezterm|foot|footclient)$";
     };
 
     xwayland.force_zero_scaling = true;

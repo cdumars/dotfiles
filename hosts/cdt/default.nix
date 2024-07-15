@@ -29,7 +29,7 @@
 
     # enable ROCM support
     extraPackages = with pkgs; [
-      rocmPackages.clr.icd
+      #      rocmPackages.clr.icd
     ];
   };
 
