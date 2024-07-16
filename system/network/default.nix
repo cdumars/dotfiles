@@ -1,14 +1,20 @@
-{lib, ...}:
+{lib, pkgs, ...}:
 # networking configuration
 {
-  networking.networkmanager = {
-    enable = true;
-    dns = "systemd-resolved";
-  };
+  networking = {
+    useDHCP = false;
+    networkmanager = {
+      enable = true;
+      plugins = [
+        pkgs.networkmanager-openvpn
+      ];
+    };
 
-  networking.firewall = {
-    enable = false;
-    allowedTCPPorts = [22 80 443 8000 8080 8096];
+    firewall = {
+      enable = false;
+    };
+
+    domain = "local";
   };
 
   services = {
