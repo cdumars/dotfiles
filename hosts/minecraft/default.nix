@@ -65,13 +65,23 @@
     #     firefox
     #     tree
     #   ];
+
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGMq9vLzRMSczd0F5JoIJ4zm44NiWHa1ikYGhpIyyrOD cooper"
+    ];
   };
+
+  security.sudo.wheelNeedsPassword = false;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     helix # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    ripgrep
+    fd
+    htop-vim
+    screen
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -85,11 +95,14 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
+  };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [25565];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [25565 25049];
+  networking.firewall.allowedUDPPorts = [19132];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
