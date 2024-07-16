@@ -11,7 +11,7 @@
     mod = "${self}/system";
 
     # get the basic config to  build on top of
-    inherit (import mod) desktop laptop;
+    inherit (import mod) desktop laptop server;
 
     # get these into the module system
     specialArgs = {inherit inputs self;};
@@ -41,6 +41,15 @@
                 extraSpecialArgs = specialArgs;
               };
             }
+          ];
+      };
+      minecraft = nixosSystem {
+        inherit specialArgs;
+        modules =
+          server
+          ++ [
+            ./minecraft
+            "${mod}/programs/java.nix"
           ];
       };
     };
