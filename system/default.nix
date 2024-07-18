@@ -2,7 +2,7 @@ let
   desktop = [
     ./core/boot.nix
     ./core/default.nix
-    ./core/security.nix
+    ./core/security
 
     ./hardware/opengl.nix
     ./hardware/bluetooth.nix
