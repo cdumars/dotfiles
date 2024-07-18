@@ -15,6 +15,10 @@
       ../.
       ./clt
     ];
+
+    "minecraft@minecraft" = [
+      ./minecraft
+    ];
   };
 
   inherit (inputs.hm.lib) homeManagerConfiguration;
@@ -32,6 +36,14 @@ in {
       in
         homeManagerConfiguration {
           modules = homeImports."cooper@cdt";
+          inherit pkgs extraSpecialArgs;
+        };
+
+      "minecraft_minecraft" = let
+        pkgs = pkgs_nixos;
+      in
+        homeManagerConfiguration {
+          modules = homeImports."minecraft@minecraft";
           inherit pkgs extraSpecialArgs;
         };
 
