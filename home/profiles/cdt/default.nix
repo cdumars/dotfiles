@@ -7,6 +7,7 @@
 
     ../../programs
     ../../programs/wayland
+    ../../programs/webcord.nix
 
     ../../programs/prismlauncher.nix
 
