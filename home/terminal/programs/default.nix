@@ -5,6 +5,5 @@
     ./cli.nix
     ./nix.nix
     ./git.nix
-    ./yazi
   ];
 }

@@ -1,7 +1,6 @@
 { pkgs, lib, ... }: {
   imports = [
     ../../terminal/shell
-    ../../terminal/programs/cli.nix
     ../../terminal/programs/git.nix
   ];
   

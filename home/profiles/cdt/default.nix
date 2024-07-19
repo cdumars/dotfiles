@@ -1,6 +1,7 @@
 {
   imports = [
     ../../terminal/programs/xdg.nix
+    ../../terminal/programs/yazi
 
     # editors
     ../../editors/helix
