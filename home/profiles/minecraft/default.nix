@@ -1,7 +1,8 @@
-{ pkgs, lib, ... }: {
+{ self, pkgs, lib, ... }: {
   imports = [
     ../../terminal/shell
     ../../terminal/programs/git.nix
+    self.nixosModules.theme
   ];
   
   home = {

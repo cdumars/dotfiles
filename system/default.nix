@@ -21,6 +21,8 @@ let
 
   server = [
     ./nix
+    ./programs/home-manager.nix
+    ./programs/fish.nix
   ];
 
   laptop = [

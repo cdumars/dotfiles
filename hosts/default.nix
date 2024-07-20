@@ -50,6 +50,13 @@
           ++ [
             ./minecraft
             "${mod}/programs/java.nix"
+
+            {
+              home-manager = {
+                users.minecraft.imports = homeImports."minecraft@minecraft";
+                extraSpecialArgs = specialArgs;
+              };
+            }
           ];
       };
     };
