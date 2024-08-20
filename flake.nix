@@ -113,5 +113,10 @@
       url = "github:nix-community/nix-ld-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-cli = {
+      url = "github:water-sucks/nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

@@ -16,8 +16,6 @@
     # get these into the module system
     specialArgs = {inherit inputs self;};
 
-    # fenix
-    packages.${self.pkgs.system}.default = inputs.fenix.packages.${self.pkgs.system}.default.toolchain;
   in {
     nixosConfigurations = {
       cdt = nixosSystem {
@@ -34,6 +32,7 @@
             "${mod}/services/virtualisation.nix"
             "${mod}/languages/rust.nix"
             "${mod}/nix/nix-ld.nix"
+            inputs.nixos-cli.nixosModules.nixos-cli
 
             {
               home-manager = {
