@@ -118,5 +118,10 @@
       url = "github:water-sucks/nixos";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-matlab = {
+      url = "gitlab:doronbehar/nix-matlab";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

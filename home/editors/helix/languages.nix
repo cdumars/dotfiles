@@ -48,6 +48,11 @@
           auto-format = true;
           language-servers = ["deno-lsp"];
         }
+        {
+          name = "java";
+          auto-format = true;
+          language-servers = ["jdtls"];
+        }
       ]
       ++ prettierLangs langs;
 
@@ -55,6 +60,10 @@
       bash-language-server = {
         command = "${pkgs.nodePackages.bash-language-server}/bin/bash-language-server";
         args = ["start"];
+      };
+
+      jdtls = {
+        command = "${pkgs.jdt-language-server}/bin/jdtls";
       };
 
       clangd = {

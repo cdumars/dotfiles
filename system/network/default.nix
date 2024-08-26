@@ -1,4 +1,8 @@
-{lib, pkgs, ...}:
+{
+  lib,
+  pkgs,
+  ...
+}:
 # networking configuration
 {
   networking = {
@@ -24,7 +28,7 @@
     };
 
     # DNS resolver
-    resolved.enable = true;
+    #resolved.enable = true;
   };
 
   # Don't wait for network startup

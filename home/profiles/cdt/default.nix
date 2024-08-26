@@ -2,6 +2,7 @@
   imports = [
     ../../terminal/programs/xdg.nix
     ../../terminal/programs/yazi
+    ../../terminal/programs/nyaa.nix
 
     # editors
     ../../editors/helix
@@ -25,6 +26,8 @@
     monitor = [
       "DP-1, preferred, 0x0, 1"
       "DP-2, preferred, -1920x-360,2,transform,2"
+      "DP-3, preferred, -1900x720, 1"
+      #"HDMI-A-1, preferred, -1920x0,2"
       #"DP-2, preferred, -1920x0,2"
     ];
   };

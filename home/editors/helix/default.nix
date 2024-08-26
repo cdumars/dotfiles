@@ -40,6 +40,7 @@
       editor = {
         color-modes = true;
         cursorline = true;
+        bufferline = "multiple";
         cursor-shape = {
           insert = "bar";
           normal = "block";

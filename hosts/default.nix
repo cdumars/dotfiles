@@ -32,7 +32,10 @@
             "${mod}/services/virtualisation.nix"
             "${mod}/languages/rust.nix"
             "${mod}/nix/nix-ld.nix"
+            "${mod}/programs/matlab.nix"
+            
             inputs.nixos-cli.nixosModules.nixos-cli
+            "${mod}/nix/nixos-cli.nix"
 
             {
               home-manager = {

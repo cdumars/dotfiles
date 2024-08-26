@@ -4,7 +4,7 @@
     ../../terminal/programs/git.nix
     self.nixosModules.theme
   ];
-  
+
   home = {
     username = "minecraft";
 

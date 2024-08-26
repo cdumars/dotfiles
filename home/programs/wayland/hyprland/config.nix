@@ -23,6 +23,11 @@
       resize_on_border = true;
     };
 
+    render = {
+      # reduces latency for fullscreen applications
+      direct_scanout = true;
+    };
+
     cursor = {
       # hide cursor after x seconds
       inactive_timeout = 3;
@@ -91,9 +96,6 @@
 
       # enable variable refresh rate (effective depending on hardware)
       vrr = 1;
-
-      # we do, in fact, want direct scanout
-      no_direct_scanout = false;
 
       # window swallowing -- how can you live without this?
       enable_swallow = true;
