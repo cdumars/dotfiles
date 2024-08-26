@@ -15,7 +15,6 @@
 
     # get these into the module system
     specialArgs = {inherit inputs self;};
-
   in {
     nixosConfigurations = {
       cdt = nixosSystem {
@@ -33,7 +32,7 @@
             "${mod}/languages/rust.nix"
             "${mod}/nix/nix-ld.nix"
             "${mod}/programs/matlab.nix"
-            
+
             inputs.nixos-cli.nixosModules.nixos-cli
             "${mod}/nix/nixos-cli.nix"
 
