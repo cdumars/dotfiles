@@ -5,5 +5,6 @@
     ./cli.nix
     ./nix.nix
     ./git.nix
+    ./scripts.nix
   ];
 }

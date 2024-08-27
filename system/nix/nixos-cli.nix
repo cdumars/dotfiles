@@ -5,21 +5,7 @@
 }: {
   services.nixos-cli = {
     enable = true;
-    package = self.inputs.nixos-cli.packages.${pkgs.system}.default.overrideAttrs (old: {
-      makeWrapperArgs = with pkgs;
-        old.makeWrapperArgs
-        or []
-        ++ [
-          "--suffix"
-          "PATH"
-          ":"
-          (
-            lib.makeBinPath [
-              nix-output-monitor
-            ]
-          )
-        ];
-    });
+    package = self.inputs.nixos-cli.packages.${pkgs.system}.default;
     config = {
       config_location = "/home/cooper/Documents/dotfiles";
       no_confirm = true;
@@ -34,4 +20,8 @@
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    nix-output-monitor
+  ];
 }
