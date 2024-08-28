@@ -25,7 +25,8 @@
 
     render = {
       # reduces latency for fullscreen applications
-      direct_scanout = true;
+      # Disabled because of flickering issues
+      direct_scanout = false;
     };
 
     cursor = {
