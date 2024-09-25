@@ -1,6 +1,5 @@
-{pkgs,...}: {
-  home.packages =
-  let
+{pkgs, ...}: {
+  home.packages = let
     live-grep = pkgs.writeShellScriptBin "live-grep" ''
       #!${pkgs.bash}/bin/bash
       # Colors
@@ -39,8 +38,7 @@
         echo "$file:$line_number"
       done
     '';
-    in
-    [
-      live-grep
-    ];
+  in [
+    live-grep
+  ];
 }

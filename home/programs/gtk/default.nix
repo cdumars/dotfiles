@@ -27,11 +27,21 @@
       package = pkgs.whitesur-icon-theme;
     };
 
-    theme = {
-      name =
-        if config.theme.name == "light"
-        then "catppuccin-latte-blue-standard+default"
-        else "catppuccin-mocha-blue-standard+default";
+#    theme = {
+#      package = pkgs.colloid-gtk-theme.override {
+#        themeVariants = [ "default" ];
+#        colorVariants = [ "dark" ];
+#        sizeVariants = [ "standard" ];
+#        tweaks = [ "catppuccin" ];
+#      };
+#      name = "Colloid-Dark-Catppuccin";
+#    };
+
+#    theme = {
+#      name =
+#        if config.theme.name == "light"
+#        then "catppuccin-latte-blue-standard+default"
+#        else "catppuccin-mocha-blue-standard+default";
       # for some reason the theme wont build from nixpkgs
       #package = inputs.catppuccin-nixpkgs.legacyPackages.${pkgs.system}.catppuccin-gtk.override {
       #  variant =
@@ -39,15 +49,19 @@
       #    then "latte"
       #    else "mocha";
       #};
-    };
+#    };
   };
-  home.sessionVariables = {
-    GTK_THEME = "catppuccin-mocha-blue-standard+default";
-  };
+#  home.sessionVariables = {
+#    GTK_THEME = "catppuccin-mocha-blue-standard+default";
+#  };
 
   home.file.".local/share/themes" = {
     enable = true;
     source = ./themes;
     recursive = true;
   };
+
+#  home.packages = [
+#    pkgs.custom.gtk-theme-catppuccin
+#  ];
 }

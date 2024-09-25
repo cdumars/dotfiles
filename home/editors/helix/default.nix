@@ -5,25 +5,25 @@
   ...
 }: let
   helix-live-grep = pkgs.writeShellScriptBin "helix-live-grep" ''
-      #!${pkgs.bash}/bin/bash
+    #!${pkgs.bash}/bin/bash
 
-      # live-grep: interactive search, output is "file:line" pairs
-      FILE_PATHS=$(live-grep --exit-on-execution | tr '\n' ' ' | sed 's/ *$//')
+    # live-grep: interactive search, output is "file:line" pairs
+    FILE_PATHS=$(live-grep --exit-on-execution | tr '\n' ' ' | sed 's/ *$//')
 
-      # Get ID of the pane above in wezterm, which should be Helix
-      HELIX_PANE_ID=$(wezterm cli get-pane-direction Up)
+    # Get ID of the pane above in wezterm, which should be Helix
+    HELIX_PANE_ID=$(wezterm cli get-pane-direction Up)
 
-      if [[ -n "$FILE_PATHS" ]]; then
-        # Send ":" to start command input in Helix
-        wezterm cli send-text --pane-id "$HELIX_PANE_ID" --no-paste ":"
+    if [[ -n "$FILE_PATHS" ]]; then
+      # Send ":" to start command input in Helix
+      wezterm cli send-text --pane-id "$HELIX_PANE_ID" --no-paste ":"
 
-        # Send the "open" command with the file path(s) to the pane
-        wezterm cli send-text --pane-id "$HELIX_PANE_ID" "open $FILE_PATHS"
+      # Send the "open" command with the file path(s) to the pane
+      wezterm cli send-text --pane-id "$HELIX_PANE_ID" "open $FILE_PATHS"
 
-        # Simulate 'Enter' key to execute the command
-        printf "\r" | wezterm cli send-text --pane-id "$HELIX_PANE_ID" --no-paste
-      fi
-    '';
+      # Simulate 'Enter' key to execute the command
+      printf "\r" | wezterm cli send-text --pane-id "$HELIX_PANE_ID" --no-paste
+    fi
+  '';
 in {
   imports = [
     ./languages.nix
@@ -52,13 +52,13 @@ in {
     });
 
     settings = {
-      theme =
-        "catppuccin_"
-        + (
-          if config.theme.name == "light"
-          then "latte"
-          else "mocha"
-        );
+#      theme =
+#        "catppuccin_"
+#        + (
+#          if config.theme.name == "light"
+#          then "latte"
+#          else "mocha"
+#        );
       editor = {
         color-modes = true;
         cursorline = true;
@@ -87,9 +87,9 @@ in {
     };
   };
 
-  xdg.configFile."helix/themes" = {
-    enable = true;
-    recursive = true;
-    source = ./themes;
-  };
+#  xdg.configFile."helix/themes" = {
+#    enable = true;
+#    recursive = true;
+#    source = ./themes;
+#  };
 }

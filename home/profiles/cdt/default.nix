@@ -20,6 +20,8 @@
     # terminal emulators
     ../../terminal/emulators/foot.nix
     ../../terminal/emulators/wezterm
+
+    ../../theming.nix
   ];
 
   wayland.windowManager.hyprland.settings = {

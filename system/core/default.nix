@@ -1,4 +1,8 @@
-{lib, ...}:
+{
+  lib,
+  self,
+  ...
+}:
 # default configuration shared by all hosts
 {
   imports = [
@@ -17,6 +21,8 @@
       "ja_JP.UTF-8/UTF-8"
     ];
   };
+
+  system.configurationRevision = self.rev or self.dirtyRev or null;
 
   # dont touch
   system.stateVersion = lib.mkDefault "23.11";

@@ -9,6 +9,7 @@
     "cooper@cdt" = [
       ../.
       ./cdt
+      inputs.catppuccin.homeManagerModules.catppuccin
     ];
 
     "cooper@clt" = [

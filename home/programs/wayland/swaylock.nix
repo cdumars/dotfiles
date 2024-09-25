@@ -7,7 +7,7 @@
     enable = true;
     package = pkgs.swaylock-effects;
     settings = let
-      c = config.programs.matugen.theme.colors.colors.${config.theme.name};
+      c = config.programs.matugen.theme.colors.${config.theme.name};
     in {
       clock = true;
       font = "Inter";

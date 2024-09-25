@@ -1,4 +1,9 @@
-{ self, pkgs, lib, ... }: {
+{
+  self,
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ../../terminal/shell
     ../../terminal/programs/git.nix

@@ -44,15 +44,15 @@
     wallpaper = config.theme.wallpaper;
   };
 
-  xdg.configFile."qt5ct/colors" = {
-    enable = true;
-    recursive = true;
-    source = "${pkgs.catppuccin-qt5ct}/share/qt5ct/colors";
-  };
+  #xdg.configFile."qt5ct/colors" = {
+  #  enable = true;
+  #  recursive = true;
+  #  source = "${pkgs.catppuccin-qt5ct}/share/qt5ct/colors";
+  #};
 
-  xdg.configFile."qt6ct/colors" = {
-    enable = true;
-    recursive = true;
-    source = "${pkgs.catppuccin-qt5ct}/share/qt5ct/colors";
-  };
+  #xdg.configFile."qt6ct/colors" = {
+  #  enable = true;
+  #  recursive = true;
+  #  source = "${pkgs.catppuccin-qt5ct}/share/qt5ct/colors";
+  #};
 }

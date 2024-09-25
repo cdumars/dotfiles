@@ -6,6 +6,7 @@
       noto-fonts-emoji
       (google-fonts.override {fonts = ["Inter"];})
       liberation_ttf
+      jetbrains-mono
 
       (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
     ];
@@ -15,7 +16,7 @@
     fontconfig.defaultFonts = {
       serif = ["Noto Serif"];
       sansSerif = ["Noto Sans"];
-      monospace = ["Liberation Mono" "Noto Color Emoji"];
+      monospace = ["JetBrains Mono" "Noto Color Emoji"];
       emoji = ["Noto Color Emoji"];
     };
   };

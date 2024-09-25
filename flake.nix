@@ -1,3 +1,4 @@
+#
 {
   description = "Cooper's NixOS flake";
 
@@ -123,5 +124,11 @@
       url = "gitlab:doronbehar/nix-matlab";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    naersk = {
+      url = "github:nix-community/naersk";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    catppuccin.url = "github:catppuccin/nix";
   };
 }
