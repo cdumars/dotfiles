@@ -7,5 +7,6 @@
     ./gui.nix
     ./qbittorrent.nix
     ./gnome
+    ./zathura.nix
   ];
 }

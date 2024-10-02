@@ -3,13 +3,21 @@
     ./mpv
   ];
 
+  # image viewer
+  programs.imv = {
+    enable = true;
+    settings = {
+      #catppuccin-mocha background color
+      options.background = "1E1E2E";
+    };
+  };
+
   home.packages = with pkgs; [
     # audio control
     pavucontrol
     pulsemixer
 
     # images
-    imv
     (hydrus.overrideAttrs {
       version = "578";
       src = fetchFromGitHub {
