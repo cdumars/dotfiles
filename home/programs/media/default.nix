@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   imports = [
     ./mpv
   ];
@@ -8,7 +8,7 @@
     enable = true;
     settings = {
       #catppuccin-mocha background color
-      options.background = "1E1E2E";
+      options.background = lib.mkForce "1E1E2E";
     };
   };
 
