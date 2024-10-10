@@ -56,6 +56,8 @@ in {
         # utility
         # terminal
         "$mod SHIFT, Return, exec, wezterm start"
+        # browser
+        "$mod, B, exec, chromium"
 
         # anyrun launcher
         "$mod, P, exec, anyrun"
