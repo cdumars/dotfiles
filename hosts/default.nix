@@ -32,7 +32,6 @@
             "${mod}/languages/rust.nix"
             "${mod}/nix/nix-ld.nix"
             "${mod}/programs/matlab.nix"
-            "${mod}/programs/kicad.nix"
 
             inputs.nixos-cli.nixosModules.nixos-cli
             "${mod}/nix/nixos-cli.nix"
