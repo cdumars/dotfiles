@@ -107,7 +107,7 @@
 
     env = [
       "GDK_SCALE,2"
-      "XCURSOR_SIZE,32"
+      "XCURSOR_SIZE,24"
       "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
       "WLR_DRM_NO_ATOMIC,1"
     ];
