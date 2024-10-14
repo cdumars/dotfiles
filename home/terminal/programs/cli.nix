@@ -8,7 +8,7 @@
     zip
     unzip
     unrar
-    _7zz
+    _7zz-rar
 
     # misc
     libnotify
