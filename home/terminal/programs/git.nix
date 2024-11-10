@@ -19,6 +19,7 @@
     extraConfig = {
       diff.colorMoved = "default";
       merge.conflictstyle = "diff3";
+      safe.directory = "*";
     };
 
     aliases = {
