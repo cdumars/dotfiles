@@ -24,6 +24,14 @@
       theme.name = "dark";
       home.activation = {inherit dconfDark;};
     };
+    two-monitor.configuration = {
+      wayland.windowManager.hyprland.settings = {
+        monitor = [
+          "DP-1, preferred, 0x0, 1"
+          "DP-2, preferred, -1920x0,2"
+        ];
+      };
+    };
   };
 
   theme = {
