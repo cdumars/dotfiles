@@ -110,8 +110,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-ld-rs = {
-      url = "github:nix-community/nix-ld-rs";
+    nix-ld = {
+      url = "github:nix-community/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

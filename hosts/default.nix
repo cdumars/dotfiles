@@ -32,8 +32,10 @@
             "${mod}/languages/rust.nix"
             "${mod}/nix/nix-ld.nix"
             "${mod}/programs/matlab.nix"
+            "${mod}/hardware/tablet.nix"
 
             inputs.nixos-cli.nixosModules.nixos-cli
+            inputs.nix-ld.nixosModules.nix-ld
             "${mod}/nix/nixos-cli.nix"
 
             {

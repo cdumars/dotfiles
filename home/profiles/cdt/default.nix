@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   imports = [
     ../../terminal/programs/xdg.nix
     ../../terminal/programs/yazi
@@ -24,13 +24,24 @@
     ../../theming.nix
   ];
 
+  specialisation = {
+    two-monitor = {
+      configuration = {
+        wayland.windowManager.hyprland.settings = {
+          monitor = [
+            "DP-1, preferred, 0x0, 1"
+            "DP-2, preferred, -1920x0,2"
+          ];
+        };
+      };
+    };
+  };
+
   wayland.windowManager.hyprland.settings = {
-    monitor = [
+    monitor = lib.mkDefault [
       "DP-1, preferred, 0x0, 1"
       "DP-2, preferred, -1920x-360,2,transform,2"
       "DP-3, preferred, -1900x720, 1"
-      #"HDMI-A-1, preferred, -1920x0,2"
-      #"DP-2, preferred, -1920x0,2"
     ];
   };
   home.file = {

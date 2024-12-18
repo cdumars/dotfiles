@@ -3,9 +3,8 @@
   self,
   ...
 }: {
-  programs.nix-ld = {
+  programs.nix-ld.dev = {
     enable = true;
-    package = self.inputs.nix-ld-rs.packages.${pkgs.system}.nix-ld-rs;
 
     libraries = with pkgs; [
       alsa-lib

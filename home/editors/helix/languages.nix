@@ -53,6 +53,11 @@
           auto-format = true;
           language-servers = ["jdtls"];
         }
+        {
+          name = "nix";
+          auto-format = true;
+          language-servers = ["nil"];
+        }
       ]
       ++ prettierLangs langs;
 
