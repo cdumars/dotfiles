@@ -8,7 +8,7 @@
       liberation_ttf
       jetbrains-mono
 
-      (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+      pkgs.nerd-fonts.symbols-only
     ];
 
     enableDefaultPackages = false;

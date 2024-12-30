@@ -111,7 +111,7 @@
     };
 
     nix-ld = {
-      url = "github:nix-community/nix-ld";
+      url = "github:cdumars/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
