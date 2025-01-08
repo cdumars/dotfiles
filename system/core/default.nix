@@ -27,5 +27,5 @@
   # dont touch
   system.stateVersion = lib.mkDefault "23.11";
 
-  time.timeZone = lib.mkDefault "America/Phoenix";
+  time.timeZone = lib.mkDefault "America/Los_Angeles";
 }

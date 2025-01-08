@@ -91,7 +91,7 @@
     yazi.url = "github:sxyazi/yazi";
 
     ags = {
-      url = "github:Aylur/ags";
+      url = "github:Aylur/ags/v1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -129,6 +129,7 @@
       url = "github:nix-community/naersk";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     catppuccin.url = "github:catppuccin/nix";
   };
 }

@@ -22,6 +22,8 @@
     ../../terminal/emulators/wezterm
 
     ../../theming.nix
+
+    ../../desktop
   ];
 
   specialisation = {

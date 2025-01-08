@@ -29,7 +29,7 @@ in {
         # compositor commands
         "$mod SHIFT, Q, exec, pkill Hyprland"
         "$mod SHIFT, W, killactive,"
-        "$mod, F, fullscreen,"
+        "$mod, F, fullscreen, 0"
         "$mod, G, togglegroup,"
         "$mod SHIFT, N, changegroupactive, f"
         "$mod SHIFT, P, changegroupactive, b"
@@ -62,9 +62,11 @@ in {
         # anyrun launcher
         "$mod, P, exec, anyrun"
 
+        # fake fullscreen
+
         # screenshot
         # stop animations while screenshotting; makes black border go away
-        ", Print, exec, ${screenshotarea}"
+        "$mod, SHIFT, S, Print, exec, ${screenshotarea}"
         "$mod SHIFT, R, exec, ${screenshotarea}"
       ]
       ++ workspaces;

@@ -1,6 +1,6 @@
 {
   pkgs,
-  self,
+  inputs,
   ...
 }: {
   programs.nix-ld.dev = {

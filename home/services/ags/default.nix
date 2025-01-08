@@ -49,7 +49,7 @@ in {
     };
     Service = {
       Environment = "PATH=/run/wrappers/bin:${lib.makeBinPath dependencies}";
-      ExecStart = "${cfg.package}/bin/ags";
+      ExecStart = "${cfg.package}/bin/ags run";
       Restart = "on-failure";
     };
     Install.WantedBy = ["graphical-session.target"];
