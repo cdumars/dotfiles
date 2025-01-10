@@ -45,11 +45,12 @@ in {
       PartOf = [
         "tray.target"
         "graphical-session.target"
+        "background-graphical.slice"
       ];
     };
     Service = {
       Environment = "PATH=/run/wrappers/bin:${lib.makeBinPath dependencies}";
-      ExecStart = "${cfg.package}/bin/ags run";
+      ExecStart = "${lib.getExe pkgs.uwsm} app -s b -- ${cfg.package}/bin/ags run";
       Restart = "on-failure";
     };
     Install.WantedBy = ["graphical-session.target"];

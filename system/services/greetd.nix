@@ -14,10 +14,12 @@
       export XDG_SESSION_DESKTOP="Hyprland"
       export XDG_CURRENT_DESKTOP="Hyprland"
 
-      systemd-run --user --scope --collect --quiet --unit="hyprland" \
-        systemd-cat --identifier="hyprland" ${hyprland}/bin/Hyprland $@
+      #systemd-run --user --scope --collect --quiet --unit="hyprland" \
+      #  systemd-cat --identifier="hyprland" ${hyprland}/bin/Hyprland $@
 
-      ${hyprland}/bin/hyprctl dispatch exit
+      #${hyprland}/bin/hyprctl dispatch exit
+
+      exec ${pkgs.uwsm}/bin/uwsm start -S hyprland-uwsm.desktop
     '');
 
     session = {

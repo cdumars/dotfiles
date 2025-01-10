@@ -5,11 +5,11 @@
       #"hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       #"systemctl --user start clight"
       #fix theme in file picker
-      "dbus-update-activation-environment --systemd --all"
-      "systemctl --user import-environment PATH"
-      "systemctl --user restart xdg-desktop-portal.service"
-      "foot --server"
-      "swaylock"
+      "uswm app -- dbus-update-activation-environment --systemd --all"
+      "uswm app -- systemctl --user import-environment PATH"
+      "uswm app -- systemctl --user restart xdg-desktop-portal.service"
+      #"foot --server"
+      "uwsm app -- swaylock"
     ];
 
     general = {
@@ -107,11 +107,11 @@
 
     xwayland.force_zero_scaling = true;
 
-    env = [
-      "XCURSOR_SIZE,24"
-      "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-      "WLR_DRM_NO_ATOMIC,1"
-    ];
+    #env = [
+    #  "XCURSOR_SIZE,24"
+    #  "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+    #  "WLR_DRM_NO_ATOMIC,1"
+    #];
 
     debug.disable_logs = false;
   };

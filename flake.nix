@@ -74,7 +74,7 @@
     hyprpaper.url = "github:hyprwm/hyprpaper";
 
     anyrun = {
-      url = "github:Kirottu/anyrun";
+      url = "github:cdumars/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

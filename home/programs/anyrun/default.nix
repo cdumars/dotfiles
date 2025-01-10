@@ -33,7 +33,11 @@
       Config(
         desktop_actions: false,
         max_entries: 5,
-        terminal: Some("wezterm"),
+        terminal: Some(Terminal(
+          command: "wezterm",
+          args: "start {}",
+        )),
+        app_launch_prefix: Some("uwsm app --")
       )
     '';
   };

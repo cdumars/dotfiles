@@ -1,5 +1,5 @@
-let
-  screenshotarea = "hyprctl keyword animation 'fadeOut,0,0,default'; grimblast --notify copysave area; hyprctl keyword animation 'fadeOut,1,4,default'";
+{pkgs, ...}: let
+  screenshotarea = "uwsm app -- hyprctl keyword animation 'fadeOut,0,0,default'; uwsm app -- ${pkgs.grimblast} --notify copysave area; uwsm app -- hyprctl keyword animation 'fadeOut,1,4,default'";
   workspaces = builtins.concatLists (builtins.genList (
       x: let
         ws = let
@@ -27,7 +27,7 @@ in {
     in
       [
         # compositor commands
-        "$mod SHIFT, Q, exec, pkill Hyprland"
+        "$mod SHIFT, Q, exec, uwsm stop"
         "$mod SHIFT, W, killactive,"
         "$mod, F, fullscreen, 0"
         "$mod, G, togglegroup,"
@@ -55,19 +55,18 @@ in {
 
         # utility
         # terminal
-        "$mod SHIFT, Return, exec, wezterm start"
+        "$mod SHIFT, Return, exec, uwsm app -- org.wezfurlong.wezterm.desktop"
         # browser
-        "$mod, B, exec, chromium"
+        "$mod, B, exec, uwsm app -- chromium-browser.desktop"
 
         # anyrun launcher
-        "$mod, P, exec, anyrun"
+        "$mod, P, exec, uwsm app -- anyrun"
 
         # fake fullscreen
 
         # screenshot
         # stop animations while screenshotting; makes black border go away
-        "$mod, SHIFT, S, Print, exec, ${screenshotarea}"
-        "$mod SHIFT, R, exec, ${screenshotarea}"
+        "$mod SHIFT, S, exec, ${screenshotarea}"
       ]
       ++ workspaces;
 
@@ -76,23 +75,23 @@ in {
 
     bindl = [
       # media controls
-      ", XF86AudioPlay, exec, playerctl play-pause"
-      ", XF86AudioPrev, exec, playerctl previous"
-      ", XF86AudioNext, exec, playerctl next"
+      ", XF86AudioPlay, exec, uwsm app -- playerctl play-pause"
+      ", XF86AudioPrev, exec, uwsm app -- playerctl previous"
+      ", XF86AudioNext, exec, uwsm app -- playerctl next"
 
       # volume
-      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-      ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+      ", XF86AudioMute, exec, uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ", XF86AudioMicMute, exec, uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
     ];
 
     bindle = [
       # volume
-      ", XF86AudioRaiseVolume, exec, wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"
-      ", XF86AudioLowerVolume, exec, wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%-"
+      ", XF86AudioRaiseVolume, exec, uwsm app -- wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"
+      ", XF86AudioLowerVolume, exec, uwsm app -- wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%-"
 
       # backlight
-      ", XF86MonBrightnessUp, exec, brillo -q -u 300000 -A 5"
-      ", XF86MonBrightnessDown, exec, brillo -q -u 300000 -U 5"
+      ", XF86MonBrightnessUp, exec, uwsm app -- brillo -q -u 300000 -A 5"
+      ", XF86MonBrightnessDown, exec, uwsm app -- brillo -q -u 300000 -U 5"
     ];
   };
 }

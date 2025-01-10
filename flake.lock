@@ -31,15 +31,15 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1735301051,
-        "narHash": "sha256-jU88Q9tP4vuvWYGQcmOdFwI9e2uMPVYJHbXdiklIH9o=",
-        "owner": "Kirottu",
+        "lastModified": 1736477612,
+        "narHash": "sha256-ozsgm4nHEQGV7mJMRIwrs7Pb8jAgXh38wFCVy+ZxRSQ=",
+        "owner": "cdumars",
         "repo": "anyrun",
-        "rev": "06017e753c8886d5296768dca80745ee09402a2d",
+        "rev": "37a0c0ae455ebda95639fbe3a303895849f3e96a",
         "type": "github"
       },
       "original": {
-        "owner": "Kirottu",
+        "owner": "cdumars",
         "repo": "anyrun",
         "type": "github"
       }
