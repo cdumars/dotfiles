@@ -18,7 +18,7 @@
   ];
 
   guiDeps = with pkgs; [
-    gnome-control-center
+    gnome-resources
     mission-center
     overskride
     wlogout
