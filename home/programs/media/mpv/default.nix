@@ -45,11 +45,15 @@
       ];
     };
 
-    scripts = with pkgs.mpvScripts; [
-      autoload
-      webtorrent-mpv-hook
-      mpv-webm
-    ];
+    scripts = with pkgs.mpvScripts;
+      [
+        autoload
+        #webtorrent-mpv-hook
+        mpv-webm
+      ]
+      ++ [
+        pkgs.custom.webtorrent-mpv-hook
+      ];
     #++ [inputs.keroro.packages.${pkgs.system}.mpvScripts.default];
   };
 
