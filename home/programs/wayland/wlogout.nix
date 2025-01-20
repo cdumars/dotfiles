@@ -12,7 +12,7 @@ in {
   programs.wlogout = {
     enable = true;
 
-    style = ''
+    style = lib.mkForce ''
       * {
         background: none;
       }
