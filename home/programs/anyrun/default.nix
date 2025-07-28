@@ -2,10 +2,11 @@
   pkgs,
   inputs,
   config,
+  lib,
   ...
 }: {
   imports = [
-    inputs.anyrun.homeManagerModules.default
+    #inputs.anyrun.homeManagerModules.default
   ];
 
   programs.anyrun = {
@@ -29,7 +30,16 @@
 
     extraCss = builtins.readFile (./. + "/style-${config.theme.name}.css");
 
-    extraConfigFiles."applications.ron".text = ''
+    extraConfigFiles."applications.ron".text = let
+      preprocess_script = pkgs.writeShellApplication {
+        name = "anyrun-preprocess-application-exec";
+        runtimeInputs = [];
+        text = ''
+          shift # Remove term|no-term
+          echo "uwsm app -- $*"
+        '';
+      };
+    in ''
       Config(
         desktop_actions: false,
         max_entries: 5,
@@ -37,7 +47,7 @@
           command: "wezterm",
           args: "start {}",
         )),
-        app_launch_prefix: Some("uwsm app --")
+        preprocess_exec_script: Some("${lib.getExe preprocess_script}")
       )
     '';
   };

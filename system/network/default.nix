@@ -5,7 +5,12 @@
 }:
 # networking configuration
 {
+  imports = [
+    ./hosts.nix
+  ];
+
   networking = {
+    wireless.enable = false;
     useDHCP = false;
     networkmanager = {
       enable = true;

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.steam = {
     # window doesn't load properly
     enable = true;
@@ -30,6 +34,9 @@
 
   programs.gamescope = {
     enable = true;
+    package = pkgs.gamescope.overrideAttrs {
+      version = "3.16.2";
+    };
   };
 
   environment.systemPackages = [
@@ -55,4 +62,8 @@
         ];
     })
   ];
+
+  virtualisation.waydroid.enable = true;
+
+  programs.sleepy-launcher.enable = true;
 }

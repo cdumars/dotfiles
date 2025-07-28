@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  programs.nix-ld.dev = {
+  programs.nix-ld = {
     enable = true;
 
     libraries = with pkgs; [

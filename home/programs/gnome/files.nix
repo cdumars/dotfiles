@@ -8,7 +8,7 @@
           gst-plugins-bad
         ]);
     }))
-    ffmpegthumbs
+    kdePackages.ffmpegthumbs
     ffmpegthumbnailer
     file-roller
   ];

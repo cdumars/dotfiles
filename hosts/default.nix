@@ -35,8 +35,9 @@
             "${mod}/hardware/tablet.nix"
 
             inputs.nixos-cli.nixosModules.nixos-cli
-            inputs.nix-ld.nixosModules.nix-ld
             "${mod}/nix/nixos-cli.nix"
+
+            inputs.aagl.nixosModules.default
 
             {
               home-manager = {

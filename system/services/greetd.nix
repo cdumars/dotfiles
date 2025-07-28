@@ -8,7 +8,7 @@
   # greetd display manager
   services.greetd = let
     hypr-run = let
-      hyprland = inputs.hyprland.packages.${pkgs.system}.default;
+      hyprland = pkgs.hyprland; #inputs.hyprland.packages.${pkgs.system}.default;
     in (pkgs.writeShellScriptBin "hypr-run" ''
       export XDG_SESSION_TYPE="wayland"
       export XDG_SESSION_DESKTOP="Hyprland"

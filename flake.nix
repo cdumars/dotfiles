@@ -32,6 +32,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixpkgs-rocm5.url = "github:nixos/nixpkgs/3e2cf88148e732abc1d259286123e06a9d8c964a";
+
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -63,7 +65,7 @@
 
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland-contrib = {
@@ -74,7 +76,7 @@
     hyprpaper.url = "github:hyprwm/hyprpaper";
 
     anyrun = {
-      url = "github:cdumars/anyrun";
+      url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -85,7 +87,7 @@
 
     wezterm = {
       url = "github:wez/wezterm?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     yazi.url = "github:sxyazi/yazi";
@@ -110,13 +112,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-ld = {
-      url = "github:cdumars/nix-ld";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nix-ld = {
+    #   url = "github:cdumars/nix-ld";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     nixos-cli = {
-      url = "github:water-sucks/nixos";
+      url = "github:nix-community/nixos-cli/0.12.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -131,5 +133,10 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
+
+    aagl = {
+      url = "github:cdumars/aagl-gtk-on-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

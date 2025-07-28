@@ -11,6 +11,7 @@
         "video"
         "wheel"
         "users"
+        "keyd"
       ]
       else null;
   };

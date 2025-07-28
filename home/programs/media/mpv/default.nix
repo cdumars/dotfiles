@@ -37,6 +37,8 @@
 
       linear-downscaling = false;
       glsl-shaders-append = [
+        "~~/shaders/FSRCNNX_x2_16-0-4-1.glsl"
+
         "~~/shaders/SSimDownscaler.glsl" # https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10
 
         "~~/shaders/SSimSuperRes.glsl" # https://gist.github.com/igv/2364ffa6e81540f29cb7ab4c9bc05b6b
@@ -45,15 +47,14 @@
       ];
     };
 
-    scripts = with pkgs.mpvScripts;
-      [
-        autoload
-        #webtorrent-mpv-hook
-        mpv-webm
-      ]
-      ++ [
-        pkgs.custom.webtorrent-mpv-hook
-      ];
+    scripts = with pkgs.mpvScripts; [
+      autoload
+      webtorrent-mpv-hook
+      mpv-webm
+    ];
+    #++ [
+    #  pkgs.custom.webtorrent-mpv-hook
+    #];
     #++ [inputs.keroro.packages.${pkgs.system}.mpvScripts.default];
   };
 

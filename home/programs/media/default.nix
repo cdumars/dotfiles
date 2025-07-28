@@ -1,4 +1,8 @@
-{pkgs, lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./mpv
   ];
@@ -18,14 +22,15 @@
     pulsemixer
 
     # images
-    (hydrus.overrideAttrs {
-      version = "578";
-      src = fetchFromGitHub {
-        owner = "hydrusnetwork";
-        repo = "hydrus";
-        rev = "refs/tags/v578";
-        hash = "sha256-u2SXhL57iNVjRFqerzc/TByB9ArAJx81mxOjTBVBMkg=";
-      };
-    })
+    hydrus
+    # (hydrus.overrideAttrs {
+    #   version = "578";
+    #   src = fetchFromGitHub {
+    #     owner = "hydrusnetwork";
+    #     repo = "hydrus";
+    #     rev = "refs/tags/v578";
+    #     hash = "sha256-u2SXhL57iNVjRFqerzc/TByB9ArAJx81mxOjTBVBMkg=";
+    #   };
+    # })
   ];
 }

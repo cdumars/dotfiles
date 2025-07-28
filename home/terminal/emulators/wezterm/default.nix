@@ -6,7 +6,8 @@
   programs.wezterm = {
     enable = true;
 
-    package = inputs.wezterm.packages.${pkgs.system}.default;
+    # package = inputs.wezterm.packages.${pkgs.system}.default;
+    package = pkgs.wezterm;
 
     extraConfig = ''
       -- local wezterm = require "wezterm"

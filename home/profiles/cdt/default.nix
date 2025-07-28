@@ -41,9 +41,9 @@
 
   wayland.windowManager.hyprland.settings = {
     monitor = lib.mkDefault [
-      "DP-1, preferred, 0x0, 1"
-      "DP-2, preferred, -1920x-360,2,transform,2"
-      "DP-3, preferred, -1900x720, 1"
+      "DP-3, preferred, 0x0, 1"
+      "DP-2, preferred, 1920x0,2"
+      "DP-1, preferred, -1920x0, 1"
     ];
   };
   home.file = {
