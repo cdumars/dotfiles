@@ -80,7 +80,7 @@
     hyprpaper.url = "github:hyprwm/hyprpaper";
 
     anyrun = {
-      url = "github:anyrun-org/anyrun";
+      url = "github:anyrun-org/anyrun/25367153f225a59c5ce5746583e39a71ff052f09";
       inputs.nixpkgs.follows = "nixpkgs-old";
     };
 
