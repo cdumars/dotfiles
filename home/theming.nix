@@ -8,6 +8,7 @@
     gtk.enable = true;
     swaylock.enable = false;
     yazi.enable = false;
+    mpv.enable = false;
   };
 
   qt.enable = true;

@@ -5,7 +5,7 @@
 }: {
   home.packages = [
     (inputs.prism-launcher.packages.${pkgs.system}.default.overrideAttrs (old: {
-      makeWrapperArgs = with pkgs;
+      makeWrapperArgs =
         old.makeWrapperArgs
         or []
         ++ [
@@ -13,11 +13,12 @@
           "PATH"
           ":"
           (
-            lib.makeBinPath [
-              alsa-oss
-              openjdk21
-              openjdk17
-              openjdk8
+            pkgs.lib.makeBinPath [
+              pkgs.alsa-oss
+              pkgs.openjdk21
+              pkgs.openjdk17
+              pkgs.openjdk8
+              inputs.nixpkgs-new.legacyPackages.${pkgs.system}.openjdk25
             ]
           )
         ];

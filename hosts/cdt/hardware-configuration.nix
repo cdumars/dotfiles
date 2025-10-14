@@ -32,6 +32,7 @@
   };
 
   boot.initrd.luks.devices."crypt".device = "/dev/disk/by-uuid/d76a081a-af0f-47b6-b16c-3dee4c17db27";
+  boot.initrd.luks.devices."crypt1".device = "/dev/disk/by-uuid/fb033999-69d7-4cdc-a3bf-a9a42b0b0a8e";
 
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/31db9e97-7677-4292-a6b9-2ac8246752b2";
@@ -50,11 +51,11 @@
     fsType = "vfat";
   };
 
-  fileSystems."/mnt/Big" = {
-    device = "/dev/disk/by-uuid/aaae2721-a459-4bf7-b69d-be04b4dae5cf";
-    fsType = "btrfs";
-    options = ["compress=zstd"];
-  };
+  # fileSystems."/mnt/Big" = {
+  #   device = "/dev/disk/by-uuid/aaae2721-a459-4bf7-b69d-be04b4dae5cf";
+  #   fsType = "btrfs";
+  #   options = ["compress=zstd"];
+  # };
 
   fileSystems."/mnt/Bruh" = {
     device = "/dev/disk/by-uuid/a663013e-eeb1-456a-848d-3f2022fb157d";

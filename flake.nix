@@ -32,6 +32,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixpkgs-new.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    nixpkgs-old.url = "github:nixos/nixpkgs/62e0f05ede1da0d54515d4ea8ce9c733f12d9f08";
+
     nixpkgs-rocm5.url = "github:nixos/nixpkgs/3e2cf88148e732abc1d259286123e06a9d8c964a";
 
     nix-darwin = {
@@ -77,12 +81,11 @@
 
     anyrun = {
       url = "github:anyrun-org/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-old";
     };
 
     matugen = {
       url = "github:InioX/matugen";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     wezterm = {
@@ -94,7 +97,7 @@
 
     ags = {
       url = "github:Aylur/ags/v1";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-old";
     };
 
     prism-launcher = {
@@ -118,8 +121,8 @@
     # };
 
     nixos-cli = {
-      url = "github:nix-community/nixos-cli/0.12.2";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixos-cli";
+      inputs.nixpkgs.follows = "nixpkgs-new";
     };
 
     nix-matlab = {

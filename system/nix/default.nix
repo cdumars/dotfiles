@@ -25,7 +25,7 @@
       experimental-features = ["nix-command" "flakes"];
       flake-registry = "/etc/nix/registry.json";
 
-      max-jobs = 2;
+      max-jobs = 16;
 
       substituters = [
         "https://nix-community.cachix.org"

@@ -15,6 +15,7 @@
     procps
     ripgrep
     util-linux
+    inputs.ags.packages.${pkgs.system}.ags
   ];
 
   guiDeps = with pkgs; [
@@ -50,7 +51,7 @@ in {
     };
     Service = {
       Environment = "PATH=/run/wrappers/bin:${lib.makeBinPath dependencies}";
-      ExecStart = "${lib.getExe pkgs.uwsm} app -s b -- ${cfg.package}/bin/ags run";
+      ExecStart = "${cfg.package}/bin/ags";
       Restart = "on-failure";
     };
     Install.WantedBy = ["graphical-session.target"];

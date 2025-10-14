@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   lib,
   ...
@@ -34,9 +35,10 @@
 
   programs.gamescope = {
     enable = true;
-    package = pkgs.gamescope.overrideAttrs {
-      version = "3.16.2";
-    };
+    package = inputs.nixpkgs-new.legacyPackages.${pkgs.system}.gamescope;
+    # package = pkgs.gamescope.overrideAttrs {
+    #   version = "3.16.2";
+    # };
   };
 
   environment.systemPackages = [
