@@ -1,5 +1,10 @@
-{pkgs, ...}: let
-  screenshotarea = "uwsm app -- hyprctl keyword animation 'fadeOut,0,0,default'; uwsm app -- ${pkgs.grimblast} --notify copysave area; uwsm app -- hyprctl keyword animation 'fadeOut,1,4,default'";
+{
+  pkgs,
+  self,
+  ...
+}: let
+  runapp = "${pkgs.custom.runapp}/bin/runapp";
+  screenshotarea = "${runapp} hyprctl keyword animation 'fadeOut,0,0,default'; ${runapp} -- ${pkgs.grimblast} --notify copysave area; ${runapp} -- hyprctl keyword animation 'fadeOut,1,4,default'";
   workspaces = builtins.concatLists (builtins.genList (
       x: let
         ws = let
@@ -55,12 +60,12 @@ in {
 
         # utility
         # terminal
-        "$mod SHIFT, Return, exec, uwsm app -- org.wezfurlong.wezterm.desktop"
+        "$mod SHIFT, Return, exec, ${runapp} -- wezterm"
         # browser
-        "$mod, B, exec, uwsm app -- chromium-browser.desktop"
+        "$mod, B, exec, ${runapp} -- librewolf"
 
         # anyrun launcher
-        "$mod, P, exec, uwsm app -- anyrun"
+        "$mod, P, exec, anyrun"
 
         # fake fullscreen
 
@@ -75,23 +80,23 @@ in {
 
     bindl = [
       # media controls
-      ", XF86AudioPlay, exec, uwsm app -- playerctl play-pause"
-      ", XF86AudioPrev, exec, uwsm app -- playerctl previous"
-      ", XF86AudioNext, exec, uwsm app -- playerctl next"
+      ", XF86AudioPlay, exec, playerctl play-pause"
+      ", XF86AudioPrev, exec, playerctl previous"
+      ", XF86AudioNext, exec, playerctl next"
 
       # volume
-      ", XF86AudioMute, exec, uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-      ", XF86AudioMicMute, exec, uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
     ];
 
     bindle = [
       # volume
-      ", XF86AudioRaiseVolume, exec, uwsm app -- wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"
-      ", XF86AudioLowerVolume, exec, uwsm app -- wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%-"
+      ", XF86AudioRaiseVolume, exec, wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"
+      ", XF86AudioLowerVolume, exec, wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%-"
 
       # backlight
-      ", XF86MonBrightnessUp, exec, uwsm app -- brillo -q -u 300000 -A 5"
-      ", XF86MonBrightnessDown, exec, uwsm app -- brillo -q -u 300000 -U 5"
+      ", XF86MonBrightnessUp, exec, brillo -q -u 300000 -A 5"
+      ", XF86MonBrightnessDown, exec, brillo -q -u 300000 -U 5"
     ];
   };
 }

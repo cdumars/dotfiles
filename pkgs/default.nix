@@ -15,6 +15,8 @@
           libdatachannel = pkgs.libdatachannel;
           plog = pkgs.plog;
         };
+
+        runapp = pkgs.callPackage ./runapp.nix {inherit pkgs;};
       };
     })
   ];

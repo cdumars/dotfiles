@@ -4,7 +4,9 @@
   config,
   lib,
   ...
-}: {
+}: let
+  runapp = "${pkgs.custom.runapp}/bin/runapp";
+in {
   imports = [
     #inputs.anyrun.homeManagerModules.default
   ];
@@ -37,7 +39,7 @@
         runtimeInputs = [];
         text = ''
           shift # Remove term|no-term
-          echo "uwsm app -- $*"
+          echo "${runapp} -- $*"
         '';
       };
     in ''
