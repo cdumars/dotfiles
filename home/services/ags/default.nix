@@ -28,6 +28,8 @@
   dependencies = requiredDeps ++ guiDeps;
 
   cfg = config.programs.ags;
+
+  runapp = "${pkgs.custom.runapp}/bin/runapp";
 in {
   imports = [
     inputs.ags.homeManagerModules.default

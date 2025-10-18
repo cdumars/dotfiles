@@ -17,6 +17,8 @@
         };
 
         runapp = pkgs.callPackage ./runapp.nix {inherit pkgs;};
+
+        IronyModManager = pkgs.callPackage ./irony-mod-manager.nix {inherit pkgs;};
       };
     })
   ];

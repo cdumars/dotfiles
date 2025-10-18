@@ -29,16 +29,15 @@
           xorg.libXi
           xorg.libXinerama
           xorg.libXScrnSaver
+
+          gamescope
         ];
     };
   };
 
   programs.gamescope = {
     enable = true;
-    package = inputs.nixpkgs-new.legacyPackages.${pkgs.system}.gamescope;
-    # package = pkgs.gamescope.overrideAttrs {
-    #   version = "3.16.2";
-    # };
+    package = pkgs.gamescope;
   };
 
   environment.systemPackages = [

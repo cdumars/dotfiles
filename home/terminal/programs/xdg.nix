@@ -3,10 +3,11 @@
   pkgs,
   ...
 }: let
-  browser = ["chromium"];
+  browser = ["librewolf"];
   imageViewer = ["imv"];
   videoPlayer = ["mpv"];
   audioPlayer = ["mpv"];
+  fileCompressor = ["org.gnome.FileRoller"];
 
   xdgAssociations = type: program: list:
     builtins.listToAttrs (map (e: {
@@ -18,6 +19,7 @@
   image = xdgAssociations "image" imageViewer ["png" "svg" "jpeg" "git"];
   video = xdgAssociations "video" videoPlayer ["mp4" "avi" "mkv" "webm"];
   audio = xdgAssociations "audio" audioPlayer ["mp3" "flac" "wav" "aac"];
+  compressed = xdgAssociations "application" fileCompressor ["zip" "x-7z-compressed" "vnd.rar"];
   browserTypes =
     (xdgAssociations "application" browser [
       "json"
@@ -46,6 +48,7 @@
     // image
     // video
     // audio
+    // compressed
     // browserTypes);
 in {
   xdg = {

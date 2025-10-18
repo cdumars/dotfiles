@@ -1,8 +1,12 @@
 {
   pkgs,
+  config,
   self,
   ...
 }: let
+  cfg = config.wayland.windowManager.hyprland;
+  hyprland = cfg.package;
+
   runapp = "${pkgs.custom.runapp}/bin/runapp";
   screenshotarea = "${runapp} hyprctl keyword animation 'fadeOut,0,0,default'; ${runapp} -- ${pkgs.grimblast} --notify copysave area; ${runapp} -- hyprctl keyword animation 'fadeOut,1,4,default'";
   workspaces = builtins.concatLists (builtins.genList (
@@ -17,6 +21,17 @@
       ]
     )
     10);
+
+  confirm-exit = pkgs.writeShellScriptBin "hypr-confirm-exit" ''
+    LOCK="$XDG_RUNTIME_DIR/hypr/exit.lock"
+
+    if [ -f $LOCK ]; then
+      rm -f $LOCK && ${pkgs.uwsm}/bin/uwsm stop
+    else
+      touch $LOCK && "${hyprland}/bin/hyprctl" notify -0 10000 "rgb(df3f01)" "fontsize:16 Do you really want to exit? Press again to confirm!"
+      sleep 10 && rm -f $LOCK
+    fi
+  '';
 in {
   wayland.windowManager.hyprland.settings = {
     # mouse movements
@@ -32,7 +47,7 @@ in {
     in
       [
         # compositor commands
-        "$mod SHIFT, Q, exec, uwsm stop"
+        "$mod SHIFT, Q, exec, ${confirm-exit}/bin/hypr-confirm-exit"
         "$mod SHIFT, W, killactive,"
         "$mod, F, fullscreen, 0"
         "$mod, G, togglegroup,"
