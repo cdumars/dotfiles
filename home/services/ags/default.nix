@@ -1,11 +1,13 @@
 {
   inputs,
-  pkgs,
   lib,
+  pkgs,
   config,
   ...
 }: let
-  requiredDeps = with pkgs; [
+  pkgs_ = inputs.nixpkgs-old.legacyPackages.${pkgs.system};
+
+  requiredDeps = with pkgs_; [
     config.wayland.windowManager.hyprland.package
     bash
     coreutils
@@ -15,10 +17,9 @@
     procps
     ripgrep
     util-linux
-    inputs.ags.packages.${pkgs.system}.ags
   ];
 
-  guiDeps = with pkgs; [
+  guiDeps = with pkgs_; [
     gnome-resources
     mission-center
     overskride
@@ -28,8 +29,6 @@
   dependencies = requiredDeps ++ guiDeps;
 
   cfg = config.programs.ags;
-
-  runapp = "${pkgs.custom.runapp}/bin/runapp";
 in {
   imports = [
     inputs.ags.homeManagerModules.default
@@ -53,7 +52,7 @@ in {
     };
     Service = {
       Environment = "PATH=/run/wrappers/bin:${lib.makeBinPath dependencies}";
-      ExecStart = "${cfg.package}/bin/ags";
+      ExecStart = "${lib.getExe pkgs_.uwsm} app -s b -- ${lib.getExe cfg.package}";
       Restart = "on-failure";
     };
     Install.WantedBy = ["graphical-session.target"];

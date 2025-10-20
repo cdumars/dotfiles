@@ -36,6 +36,7 @@
       libxkbcommon
       libxml2
       mesa
+      ncurses
       nspr
       nss
       openssl
