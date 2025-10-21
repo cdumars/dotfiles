@@ -24,6 +24,7 @@
           libvorbis
           pipewire
           mangohud
+          ncurses
           stdenv.cc.cc.lib
           xorg.libXcursor
           xorg.libXi

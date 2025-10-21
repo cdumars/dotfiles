@@ -24,6 +24,9 @@
     ../../theming.nix
 
     ../../desktop
+
+    # configuration
+    ../../configuration
   ];
 
   specialisation = {
