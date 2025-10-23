@@ -18,7 +18,7 @@
               pkgs.openjdk21
               pkgs.openjdk17
               pkgs.openjdk8
-              inputs.nixpkgs-new.legacyPackages.${pkgs.system}.openjdk25
+              pkgs.openjdk25
             ]
           )
         ];

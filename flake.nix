@@ -32,8 +32,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs-new.url = "github:nixos/nixpkgs/nixos-unstable";
-
     nixpkgs-old.url = "github:nixos/nixpkgs/62e0f05ede1da0d54515d4ea8ce9c733f12d9f08";
 
     nixpkgs-rocm5.url = "github:nixos/nixpkgs/3e2cf88148e732abc1d259286123e06a9d8c964a";
@@ -122,7 +120,7 @@
 
     nixos-cli = {
       url = "github:nix-community/nixos-cli";
-      inputs.nixpkgs.follows = "nixpkgs-new";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-matlab = {

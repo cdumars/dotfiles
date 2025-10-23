@@ -11,8 +11,7 @@
 
   programs.hyprland = {
     enable = true;
-    #package = inputs.hyprland.packages.${pkgs.system}.default;
-    package = pkgs.hyprland;
+    package = inputs.hyprland.packages.${pkgs.system}.default;
 
     # use universal wayland session manager
     withUWSM = true;

@@ -1,8 +1,8 @@
-{
+{lib, ...}: {
   programs.mangohud = {
     enable = true;
 
-    settings = {
+    settings = lib.mkForce {
       gpu_stats = true;
       gpu_temp = true;
       gpu_core_clock = true;
