@@ -72,7 +72,7 @@
 
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprpaper.url = "github:hyprwm/hyprpaper";

@@ -5,11 +5,11 @@
       #"hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       #"systemctl --user start clight"
       #fix theme in file picker
-      "uswm app -- dbus-update-activation-environment --systemd --all"
-      "uswm app -- systemctl --user import-environment PATH"
-      "uswm app -- systemctl --user restart xdg-desktop-portal.service"
+      "dbus-update-activation-environment --systemd --all"
+      "systemctl --user import-environment PATH"
+      "systemctl --user restart xdg-desktop-portal.service"
       #"foot --server"
-      "uwsm app -- swaylock"
+      "swaylock"
     ];
 
     general = {
